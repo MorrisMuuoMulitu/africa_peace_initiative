@@ -1,0 +1,193 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Africa Peace Initiative">
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <a href="/">
+          <img src="/api-logo.png" alt="Africa Peace Initiative Logo">
+        </a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#get-involved">Get Involved</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-banner">
+    <video autoplay loop muted playsinline poster="/african-landscape.jpg">
+      <source src="/african-community-video.mp4" type="video/mp4">
+      <img src="/african-landscape.jpg" alt="African Landscape">
+    </video>
+    <div class="hero-content container">
+      <h1 class="hero-headline">Building Bridges for Peace in Africa</h1>
+      <p class="hero-subheadline">Empowering Communities, Transforming Lives.</p>
+      <a href="#about" class="cta-button">Learn More</a>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="container about-content">
+      <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>Africa Peace Initiative (API) is dedicated to fostering peace, unity, and sustainable development across Africa. We work to resolve conflicts, empower communities, and support initiatives that drive positive change.</p>
+        <ul class="about-values">
+          <li><i class="fas fa-users"></i> Inclusivity: We believe in the power of diverse voices and inclusive participation.</li>
+          <li><i class="fas fa-leaf"></i> Sustainability: We are committed to long-term, sustainable solutions for peace and development.</li>
+          <li><i class="fas fa-handshake"></i> Collaboration: We foster partnerships and collaboration to amplify our impact.</li>
+          <li><i class="fas fa-lightbulb"></i> Empowerment: We empower communities to lead their own transformation.</li>
+        </ul>
+      </div>
+    </div>
+    <blockquote class="quote-section container">
+      "Peace is not merely the absence of conflict, but the presence of justice." -  Dr. Kwame Nkrumah, Founder of API (Example Quote)
+    </blockquote>
+  </section>
+
+  <section id="programs" class="programs-section">
+    <div class="container">
+      <h2>Our Programs</h2>
+      <div class="programs-grid">
+        <div class="program-card">
+          <img src="/program-conflict-resolution.jpg" alt="Conflict Resolution Workshops">
+          <h3 class="program-title">Conflict Resolution Workshops</h3>
+          <p class="program-description">Training community leaders and members in mediation and conflict resolution techniques to build peaceful communities.</p>
+          <a href="#" class="explore-button">Explore Now</a>
+        </div>
+        <div class="program-card">
+          <img src="/program-youth-leadership.jpg" alt="Youth Leadership Training">
+          <h3 class="program-title">Youth Leadership Training</h3>
+          <p class="program-description">Developing the next generation of peacebuilders through leadership skills, civic engagement, and peace education.</p>
+          <a href="#" class="explore-button">Explore Now</a>
+        </div>
+        <div class="program-card">
+          <img src="/program-sustainable-dev.jpg" alt="Sustainable Development Initiatives">
+          <h3 class="program-title">Sustainable Development Initiatives</h3>
+          <p class="program-description">Implementing projects focused on economic empowerment, environmental sustainability, and community resilience.</p>
+          <a href="#" class="explore-button">Explore Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="impact" class="impact-section">
+    <div class="container">
+      <h2>The Change We're Making</h2>
+      <div class="impact-stats">
+        <div class="stat-item">
+          <h4 class="stat-number">50+</h4>
+          <p class="stat-label">Communities Supported</p>
+        </div>
+        <div class="stat-item">
+          <h4 class="stat-number">2,000+</h4>
+          <p class="stat-label">People Trained</p>
+        </div>
+        <div class="stat-item">
+          <h4 class="stat-number">10</h4>
+          <p class="stat-label">Countries Reached</p>
+        </div>
+      </div>
+      <div class="testimonials-carousel">
+        {/* Add testimonial carousel here - basic example below */}
+        <div class="testimonial-item">
+          <p>"API's conflict resolution training has transformed our community. We are now better equipped to handle disagreements peacefully." - Community Leader, South Sudan</p>
+        </div>
+        <div class="testimonial-item">
+          <p>"The youth leadership program gave me the confidence and skills to become a change agent in my society." - Program Participant, Nigeria</p>
+        </div>
+        {/* ... more testimonials ... */}
+      </div>
+    </div>
+  </section>
+
+  <section id="get-involved" class="cta-section">
+    <div class="container">
+      <h2>Join the Movement!</h2>
+      <p>Be a part of building a peaceful and prosperous Africa. Your support can make a significant difference.</p>
+      <div class="cta-buttons">
+        <a href="#" class="donate-button">Donate Today</a>
+        <a href="#" class="volunteer-button">Volunteer Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="blog-section">
+    <div class="container">
+      <h2>Latest Updates</h2>
+      <div class="blog-grid">
+        <div class="blog-post">
+          <div class="post-thumbnail">
+            <img src="/blog-post-1.jpg" alt="Blog Post 1">
+          </div>
+          <div class="post-content">
+            <h3 class="post-title">Empowering Women in Peacebuilding</h3>
+            <p class="post-excerpt">Learn about API's recent initiative to empower women as key actors in peacebuilding processes across Africa...</p>
+            <a href="#" class="read-more-link">Read More</a>
+          </div>
+        </div>
+        <div class="blog-post">
+          <div class="post-thumbnail">
+            <img src="/blog-post-2.jpg" alt="Blog Post 2">
+          </div>
+          <div class="post-content">
+            <h3 class="post-title">Youth Leading the Way to Sustainable Development</h3>
+            <p class="post-excerpt">Discover how young people are driving sustainable development and peace in their communities with API's support...</p>
+            <a href="#" class="read-more-link">Read More</a>
+          </div>
+        </div>
+        <div class="blog-post">
+          <div class="post-thumbnail">
+            <img src="/blog-post-3.jpg" alt="Blog Post 3">
+          </div>
+          <div class="post-content">
+            <h3 class="post-title">API Expands Operations to New Regions</h3>
+            <p class="post-excerpt">Exciting news! API is expanding its programs to reach even more communities in need across the African continent...</p>
+            <a href="#" class="read-more-link">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container footer-content">
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-info">
+          <li><i class="fas fa-envelope"></i> Email: info@africapeaceinitiative.org</li>
+          <li><i class="fas fa-phone"></i> Phone: +234 800 123 4567</li>
+          <li><i class="fas fa-map-marker-alt"></i> Address: 12 Peace Street, Unity City, Africa</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <ul class="social-links">
+          <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter to receive the latest news and updates.</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Your Email Address">
+          <button type="submit" class="newsletter-button">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; {new Date().getFullYear()} Africa Peace Initiative. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </footer>
+</Layout>
+```
