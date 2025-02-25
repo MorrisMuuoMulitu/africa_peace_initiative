@@ -51,10 +51,10 @@ import Layout from "../layouts/Layout.astro";
       <div class="about-text">
         <h2>Who We Are</h2>
         <p>
-          Africa Peace Initiative (API) is dedicated to fostering peace, unity,
-          and sustainable development across Africa. We work to resolve
-          conflicts, empower communities, and support initiatives that drive
-          positive change.
+          The Africa Peace Initiative (API) is a pan-African, people-centered organization committed to rethinking peace and security across the continent. We challenge conventional approaches by fostering dialogue, collaboration, technology-driven peacebuilding, and leadership development. Through capacity building, advocacy, mediation, and grassroots engagement, we work to transform conflicts and promote sustainable peace.
+        </p>
+        <p>
+          Our work is rooted in African realities, blending indigenous wisdom with modern solutions to tackle political, social, economic, and environmental drivers of conflict.
         </p>
 
         <h3>Our Vision</h3>
@@ -75,6 +75,16 @@ import Layout from "../layouts/Layout.astro";
           <li><i class="fas fa-lightbulb"></i> Accountability & Integrity: Upholding ethical leadership, transparency, and community-driven solutions.</li>
           <li><i class="fas fa-globe"></i> Sustainability & Local Ownership: Prioritizing homegrown solutions led by African communities and institutions.</li>
           <li><i class="fas fa-heart"></i> Empathy and Love of the Other: Promoting understanding and compassion as foundations for lasting peace.</li>
+        </ul>
+
+        <h3>Our Approach</h3>
+        <ul class="approach-list">
+          <li><i class="fas fa-comments"></i> Reimagining Peace through Dialogue: Convening cross-border and inter-community conversations, bridging divides, and fostering understanding.</li>
+          <li><i class="fas fa-laptop"></i> Technology & Media for Peace: Harnessing digital tools, social media, and storytelling to counter hate speech and misinformation.</li>
+          <li><i class="fas fa-users"></i> Empowering Leadership & Governance: Training young leaders, policymakers, and community mediators to drive sustainable change.</li>
+          <li><i class="fas fa-coins"></i> Economic Resilience for Stability: Addressing unemployment, inequality, and resource-based conflicts through innovation and social entrepreneurship.</li>
+          <li><i class="fas fa-globe-africa"></i> Climate, Security & Peace Nexus: Tackling the intersection of environmental challenges and conflicts through adaptation and resilience-building.</li>
+          <li><i class="fas fa-balance-scale"></i> Human Rights & Justice: Strengthening legal frameworks, accountability mechanisms, and transitional justice for conflict-affected communities.</li>
         </ul>
       </div>
     </div>
@@ -495,6 +505,22 @@ import Layout from "../layouts/Layout.astro";
     font-size: 1.3rem; /* Adjusted icon size */
   }
 
+  .approach-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .approach-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .approach-list li i {
+    margin-right: 10px;
+    color: var(--primary-color);
+  }
+
   .quote-section {
     background-color: var(--light-gray);
     padding: 50px 0; /* Adjusted quote section padding */
@@ -880,7 +906,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .nav-links li a {
-    color: var(--dark-gray);
+    color: var(--dark--gray);
     text-decoration: none;
     padding: 12px 18px;
     border-radius: 7px;
