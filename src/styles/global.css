@@ -1,14 +1,14 @@
 /* Global Styles */
 :root {
-  --primary-color: #4CAF50; /* Updated primary green */
-  --primary-darker: #388E3C; /* Darker shade for hover/active */
+  --primary-color: #4CAF50;
+  --primary-darker: #388E3C;
   --secondary-color: #FFFFFF;
   --dark-gray: #333333;
-  --light-gray: #F7F7F7; /* Slightly lighter light gray */
-  --accent-color: #FFC107; /* Updated accent yellow */
+  --light-gray: #F7F7F7;
+  --accent-color: #FFC107;
   --font-family-headings: 'Nunito Sans', sans-serif;
   --font-family-body: 'Nunito Sans', sans-serif;
-  --shadow-color: rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -17,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--light-gray); /* Set light gray as background */
+  background-color: var(--light-gray);
 }
 
 h1,
@@ -30,32 +30,24 @@ h6 {
   color: var(--dark-gray);
   font-weight: bold;
   margin-top: 1.2rem;
-  /* Slightly reduced top margin */
   margin-bottom: 0.8rem;
-  /* Slightly reduced bottom margin */
   line-height: 1.2;
-  /* Improved line height for headings */
 }
 
 p {
   line-height: 1.7;
-  /* Improved line height for body text */
   margin-bottom: 1.2rem;
-  /* Slightly increased bottom margin for paragraphs */
   color: #555;
-  /* Slightly softer text color */
 }
 
 a {
   text-decoration: none;
   color: var(--primary-color);
   transition: color 0.3s ease;
-  /* Smooth color transition for links */
 }
 
 a:hover {
   color: var(--primary-darker);
-  /* Darker green on hover */
 }
 
 /* Layout and Sections */
@@ -69,17 +61,13 @@ a:hover {
 
 section {
   padding: 70px 0;
-  /* Increased section padding */
 }
 
 /* Header */
 header {
   background-color: var(--secondary-color);
-  /* White header background */
   padding: 25px 0;
-  /* Increased header padding */
   box-shadow: 0 2px 5px var(--shadow-color);
-  /* Add shadow to header */
 }
 
 .navbar {
@@ -90,7 +78,6 @@ header {
 
 .logo img {
   height: 60px;
-  /* Slightly larger logo */
 }
 
 .nav-links {
@@ -102,7 +89,6 @@ header {
 
 .nav-links li {
   margin-left: 25px;
-  /* Increased spacing between nav links */
 }
 
 .nav-links li:first-child {
@@ -112,11 +98,8 @@ header {
 .nav-links li a {
   color: var(--dark-gray);
   padding: 12px 18px;
-  /* Adjusted padding for nav links */
   border-radius: 7px;
-  /* More rounded nav links */
   transition: background-color 0.3s ease, color 0.3s ease;
-  /* Smooth transitions */
 }
 
 .nav-links li a:hover {
@@ -133,7 +116,6 @@ header {
 .hero-banner {
   position: relative;
   height: 600px;
-  /* Increased hero height */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -141,7 +123,6 @@ header {
   text-align: center;
   color: var(--secondary-color);
   margin-bottom: 2rem;
-  /* Add margin below hero */
 }
 
 .hero-banner::before {
@@ -152,7 +133,6 @@ header {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
-  /* Slightly lighter overlay */
 }
 
 .hero-banner video,
@@ -164,13 +144,11 @@ header {
   height: 100%;
   object-fit: cover;
   transition: transform 1s ease-out;
-  /* Smooth zoom effect */
 }
 
 .hero-banner:hover video,
 .hero-banner:hover img {
   transform: scale(1.05);
-  /* Slight zoom on hover */
 }
 
 .hero-content {
@@ -181,67 +159,52 @@ header {
 
 .hero-headline {
   font-size: 3rem;
-  /* Increased hero headline size */
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 3px var(--shadow-color);
-  /* Text shadow for depth */
 }
 
 .hero-subheadline {
   font-size: 1.3rem;
   margin-bottom: 2.5rem;
   color: #eee;
-  /* Lighter subheadline color */
   text-shadow: 1px 1px 2px var(--shadow-color);
-  /* Text shadow for depth */
 }
 
 .cta-button {
   display: inline-block;
   padding: 14px 35px;
-  /* Adjusted cta button padding */
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border-radius: 7px;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  /* Smooth transitions */
   border: none;
   cursor: pointer;
   font-size: 1.1rem;
-  /* Slightly larger font size */
   box-shadow: 0 4px 7px var(--shadow-color);
-  /* Shadow for button */
 }
 
 .cta-button:hover {
   background-color: var(--primary-darker);
   transform: translateY(-2px);
-  /* Slight lift on hover */
   box-shadow: 0 6px 10px var(--shadow-color);
-  /* Increased shadow on hover */
 }
 
 .cta-button:active {
   transform: translateY(0);
-  /* No lift on active */
   box-shadow: 0 4px 7px var(--shadow-color);
-  /* Reset shadow on active */
 }
 
 /* About Section */
 .about-section {
   background-color: var(--secondary-color);
-  /* White background for about section */
   box-shadow: 0 -2px 5px var(--shadow-color);
-  /* Top shadow for section separation */
 }
 
 .about-content {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
-  /* Increased gap */
   align-items: center;
 }
 
@@ -251,43 +214,34 @@ header {
 
 .about-text h2 {
   font-size: 2.2rem;
-  /* Adjusted about section heading size */
 }
 
 .about-values {
   list-style: none;
   padding: 0;
   margin-top: 20px;
-  /* Add margin above values list */
 }
 
 .about-values li {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-  /* Increased spacing between values */
   font-size: 1.1rem;
-  /* Slightly larger value text */
 }
 
 .about-values li i {
   margin-right: 15px;
-  /* Increased icon spacing */
   color: var(--primary-color);
   font-size: 1.3rem;
-  /* Adjusted icon size */
 }
 
 .quote-section {
   background-color: var(--light-gray);
   padding: 50px 0;
-  /* Adjusted quote section padding */
   text-align: center;
   font-style: italic;
   font-size: 1.3rem;
-  /* Adjusted quote font size */
   color: #777;
-  /* Softer quote text color */
 }
 
 .quote-section blockquote {
@@ -302,60 +256,45 @@ header {
 
 .programs-section h2 {
   text-align: center;
-  /* Center programs section heading */
   font-size: 2.5rem;
-  /* Adjusted programs section heading size */
   margin-bottom: 40px;
-  /* Increased margin below heading */
 }
 
 .programs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  /* Slightly wider program cards */
   gap: 35px;
-  /* Increased gap */
 }
 
 .program-card {
   background-color: var(--secondary-color);
   border-radius: 10px;
-  /* More rounded program cards */
   padding: 25px;
-  /* Increased padding */
   box-shadow: 0 5px 10px var(--shadow-color);
-  /* More pronounced shadow */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Smooth transitions */
 }
 
 .program-card:hover {
   transform: translateY(-5px);
-  /* Lift on hover */
   box-shadow: 0 8px 15px var(--shadow-color);
-  /* Increased shadow on hover */
 }
 
 .program-card img {
   max-width: 100%;
   height: auto;
   margin-bottom: 20px;
-  /* Increased image margin */
   border-radius: 8px;
-  /* Rounded corners for images */
 }
 
 .program-title {
   font-size: 1.7rem;
-  /* Adjusted program title size */
   margin-bottom: 12px;
 }
 
 .program-description {
   margin-bottom: 20px;
   color: #666;
-  /* Slightly softer description text */
 }
 
 .explore-button {
@@ -364,16 +303,12 @@ header {
   font-size: 1rem;
 }
 
-
 /* Impact Section */
 .impact-section {
   background-color: var(--secondary-color);
-  /* White background for impact section */
   text-align: center;
   padding-bottom: 80px;
-  /* Increased padding bottom */
   box-shadow: 0 -2px 5px var(--shadow-color);
-  /* Top shadow for section separation */
 }
 
 .impact-section h2 {
@@ -386,22 +321,18 @@ header {
   justify-content: space-around;
   flex-wrap: wrap;
   margin-bottom: 40px;
-  /* Increased margin */
 }
 
 .stat-item {
   margin: 30px;
-  /* Increased margin */
   padding: 25px;
   background-color: var(--light-gray);
   border-radius: 10px;
   box-shadow: inset 0 0 0 2px var(--primary-color);
-  /* Border with primary color */
 }
 
 .stat-number {
   font-size: 2.5rem;
-  /* Increased stat number size */
   color: var(--primary-color);
   font-weight: bold;
   margin-bottom: 10px;
@@ -413,19 +344,15 @@ header {
 }
 
 .testimonials-carousel {
-  /* Add carousel styles here if needed */
   padding: 0 20px;
 }
 
 .testimonial-item {
   padding: 30px;
-  /* Increased padding */
   background-color: var(--light-gray);
   border-radius: 10px;
   margin: 20px 0;
-  /* Vertical margin for testimonials */
   box-shadow: 0 3px 7px var(--shadow-color);
-  /* Shadow for testimonials */
   font-style: italic;
   color: #666;
 }
@@ -433,30 +360,23 @@ header {
 /* CTA Section */
 .cta-section {
   background-color: var(--primary-color);
-  /* Primary color background for CTA */
   text-align: center;
   color: var(--secondary-color);
-  /* White text color */
   padding: 100px 0;
-  /* Increased padding */
 }
 
 .cta-section h2 {
   font-size: 3rem;
-  /* Increased CTA heading size */
   color: var(--secondary-color);
   margin-bottom: 25px;
   text-shadow: 2px 2px 3px var(--shadow-color);
-  /* Text shadow for contrast */
 }
 
 .cta-section p {
   color: #eee;
-  /* Lighter paragraph color */
   font-size: 1.2rem;
   margin-bottom: 30px;
   text-shadow: 1px 1px 2px var(--shadow-color);
-  /* Text shadow for contrast */
 }
 
 .cta-buttons {
@@ -467,13 +387,11 @@ header {
 .volunteer-button {
   @extend .cta-button;
   margin: 0 15px;
-  /* Increased button spacing */
 }
 
 /* Blog Section */
 .blog-section {
   background-color: var(--secondary-color);
-  /* White background for blog */
   padding-bottom: 80px;
 }
 
@@ -486,9 +404,7 @@ header {
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  /* Wider blog posts */
   gap: 40px;
-  /* Increased gap */
 }
 
 .blog-post {
@@ -496,13 +412,11 @@ header {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px var(--shadow-color);
-  /* Shadow for blog posts */
   transition: box-shadow 0.3s ease;
 }
 
 .blog-post:hover {
   box-shadow: 0 7px 14px var(--shadow-color);
-  /* Increased shadow on hover */
 }
 
 .post-thumbnail img {
@@ -510,7 +424,6 @@ header {
   height: auto;
   display: block;
   border-radius: 10px 10px 0 0;
-  /* Rounded corners for thumbnail */
 }
 
 .post-content {
@@ -539,15 +452,14 @@ footer {
   background-color: var(--dark-gray);
   color: var(--secondary-color);
   padding: 50px 0;
-  /* Increased footer padding */
+  position: relative;
+  overflow: hidden;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Wider footer columns */
   gap: 40px;
-  /* Increased gap */
 }
 
 .footer-col h3 {
@@ -556,7 +468,6 @@ footer {
   padding-bottom: 12px;
   margin-bottom: 25px;
   font-size: 1.4rem;
-  /* Adjusted footer heading size */
 }
 
 .contact-info,
@@ -582,8 +493,13 @@ footer {
 
 .social-links a {
   color: var(--secondary-color);
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.social-links a:hover {
+  color: var(--primary-color);
+  transform: translateX(5px);
+}
 
 .newsletter-form {
   display: flex;
@@ -607,10 +523,8 @@ footer {
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
-  /* Increased margin */
   padding-top: 25px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  /* Slightly more visible border */
 }
 
 .footer-bottom p,
@@ -618,29 +532,40 @@ footer {
   color: var(--secondary-color);
 }
 
+/* Footer animations */
+footer::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: url('https://ik.imagekit.io/5zp8ovb7c/layered-waves_VP9eq0J3w.svg?updatedAt=1718201337199');
+  background-size: cover;
+  z-index: 1;
+}
+
+.footer-col {
+  position: relative;
+  z-index: 2;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: row;
-    /* Arrange logo and hamburger in a row */
     justify-content: space-between;
-    /* Space them apart */
     align-items: center;
-    /* Vertically align items */
   }
 
   .logo {
     margin-bottom: 0;
-    /* Remove bottom margin */
   }
 
   .hamburger {
     display: block;
-    /* Show hamburger icon */
     position: static;
-    /* Remove absolute positioning */
-    order: 2; /* Push hamburger to the right */
+    order: 2;
   }
 
   .nav-links {
@@ -674,7 +599,6 @@ footer {
 button:focus,
 a:focus {
   outline: 2px solid var(--accent-color);
-  /* Example focus style */
   outline-offset: 2px;
 }
 
