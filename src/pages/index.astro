@@ -10,7 +10,7 @@ import Layout from "../layouts/Layout.astro";
           <img
             src="https://ik.imagekit.io/5zp8ovb7c/Africa%20Peace%20Initiative/api_logo_1?updatedAt=1740494826530"
             alt="Africa Peace Initiative Logo"
-            style="height: 80px;"
+            style="height: 60px;"
           />
         </a>
       </div>
@@ -19,27 +19,30 @@ import Layout from "../layouts/Layout.astro";
       </button>
       <nav>
         <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#programs">Programs</a></li>
+          <li><a href="/">Who We Are</a></li>
+          <li><a href="#about">Our Work</a></li>
+          <li><a href="#programs">Our Approach</a></li>
           <li><a href="#get-involved">Get Involved</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#contact">News &amp; Press</a></li>
+          <li><a href="#contact">Resources</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <section class="hero-banner">
-    <video autoplay loop muted playsinline poster="https://via.placeholder.com/1200x600">
-      <source src="/african-community-video.mp4" type="video/mp4" />
-      <img src="https://via.placeholder.com/1200x600" alt="African Landscape" />
-    </video>
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/1200x600/4CAF50/FFFFFF?text=DRC+Crisis+Zoom+Event" alt="DRC Crisis Zoom Event" />
+    </div>
     <div class="hero-content container">
-      <h1 class="hero-headline">Building Bridges for Peace in Africa</h1>
+      <h1 class="hero-headline">
+        Join Our Zoom Event: DRC Crisis
+      </h1>
       <p class="hero-subheadline">
-        Empowering Communities, Transforming Lives.
+        Learn about the ongoing crisis in the Democratic Republic of Congo and how you can help.
       </p>
-      <a href="#about" class="cta-button">Learn More</a>
+      <p><b>Date:</b> March 6th, 2025</p>
+      <a href="#" class="cta-button">Register Now</a>
     </div>
   </section>
 
@@ -227,10 +230,10 @@ import Layout from "../layouts/Layout.astro";
       <div class="footer-col">
         <h3>Follow Us</h3>
         <ul class="social-links">
-          <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-          <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="#"><i class="fas fa-facebook"></i> Facebook</a></li>
+          <li><a href="#"><i class="fas fa-twitter"></i> Twitter</a></li>
+          <li><a href="#"><i class="fas fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fas fa-linkedin"></i> LinkedIn</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -280,12 +283,7 @@ import Layout from "../layouts/Layout.astro";
     background-color: var(--light-gray); /* Set light gray as background */
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-headings);
     color: var(--dark-gray);
     font-weight: bold;
@@ -337,7 +335,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .logo img {
-    height: 80px; /* Slightly larger logo */
+    height: 60px; /* Slightly larger logo */
   }
 
   .nav-links {
@@ -503,7 +501,6 @@ import Layout from "../layouts/Layout.astro";
     font-size: 1.3rem; /* Adjusted quote font size */
     color: #777; /* Softer quote text color */
   }
-
   .quote-section blockquote {
     margin: 0 auto;
     max-width: 800px;
@@ -563,6 +560,7 @@ import Layout from "../layouts/Layout.astro";
     font-size: 1rem;
   }
 
+
   /* Impact Section */
   .impact-section {
     background-color: var(--secondary-color); /* White background for impact section */
@@ -570,7 +568,6 @@ import Layout from "../layouts/Layout.astro";
     padding-bottom: 80px; /* Increased padding bottom */
     box-shadow: 0 -2px 5px var(--shadow-color); /* Top shadow for section separation */
   }
-
   .impact-section h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
@@ -655,7 +652,6 @@ import Layout from "../layouts/Layout.astro";
     background-color: var(--secondary-color); /* White background for blog */
     padding-bottom: 80px;
   }
-
   .blog-section h2 {
     font-size: 2.5rem;
     text-align: center;
@@ -675,7 +671,6 @@ import Layout from "../layouts/Layout.astro";
     box-shadow: 0 4px 8px var(--shadow-color); /* Shadow for blog posts */
     transition: box-shadow 0.3s ease;
   }
-
   .blog-post:hover {
     box-shadow: 0 7px 14px var(--shadow-color); /* Increased shadow on hover */
   }
@@ -743,7 +738,6 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     align-items: center;
   }
-
   .contact-info li i,
   .social-links li i {
     margin-right: 10px;
@@ -754,27 +748,24 @@ import Layout from "../layouts/Layout.astro";
     color: var(--secondary-color);
   }
 
+
   .newsletter-form {
     display: flex;
-    flex-direction: column; /* Stack input and button */
-    gap: 10px; /* Add some space between them */
   }
 
   .newsletter-input {
     padding: 12px;
     border: none;
-    border-radius: 7px; /* Consistent border-radius */
-    width: 100%; /* Full width */
+    border-radius: 7px 0 0 7px;
+    width: 70%;
     color: var(--dark-gray);
-    margin-bottom: 0; /* Remove unnecessary margin */
   }
 
   .newsletter-button {
     @extend .cta-button;
     padding: 12px 20px;
-    border-radius: 7px; /* Consistent border-radius */
+    border-radius: 0 7px 7px 0;
     font-size: 1rem;
-    width: 100%; /* Full width */
   }
 
   .footer-bottom {
@@ -789,121 +780,50 @@ import Layout from "../layouts/Layout.astro";
     color: var(--secondary-color);
   }
 
+
   /* Responsive Design */
   @media (max-width: 768px) {
     .hero-headline {
       font-size: 2.3rem;
     }
-
     .hero-subheadline {
       font-size: 1.1rem;
     }
-
-    .navbar {
-      flex-wrap: wrap;
-      /* Ensure logo is on the left */
-      justify-content: flex-start;
-    }
-
-    .logo {
-      width: auto;
-      text-align: left;
-      margin-bottom: 0;
-    }
-
     .nav-links {
-      display: none;
-      width: 100%;
-      text-align: center;
-      position: fixed; /* Make the menu fixed */
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 999; /* Ensure it's on top */
-      background-color: rgba(255, 255, 255, 0.95); /* Add a semi-transparent background */
-      overflow-y: auto; /* Enable scrolling if content is too long */
-      padding-top: 60px; /* Add some padding to avoid content behind the logo */
+      display: none; /* Hide nav links on smaller screens, consider adding a hamburger menu */
     }
-
-    .nav-links.active {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .nav-links li {
-      margin: 0;
-      padding: 15px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .nav-links li a {
-      display: block;
-      padding: 10px;
-      font-size: 1.2rem;
-      color: var(--dark-gray);
-    }
-
-    .hamburger {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 24px;
-      color: var(--dark-gray);
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    .hamburger.active {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-    }
-
     .about-content {
       grid-template-columns: 1fr;
     }
-
     .impact-stats {
       flex-direction: column;
       align-items: center;
     }
-
     .stat-item {
       margin: 20px 0; /* Adjust stat item margin for smaller screens */
     }
-
     .cta-buttons {
       flex-direction: column;
       align-items: center;
     }
-
     .donate-button,
     .volunteer-button {
       margin: 10px 0;
     }
-
     .footer-content {
       grid-template-columns: 1fr;
     }
-
     .newsletter-form {
       flex-direction: column;
     }
-
     .newsletter-input {
       border-radius: 7px 7px 0 0;
       width: 100%;
     }
-
     .newsletter-button {
       border-radius: 0 0 7px 7px;
       width: 100%;
     }
-
     .programs-grid,
     .blog-grid {
       grid-template-columns: 1fr; /* Stack program and blog cards on smaller screens */
@@ -918,72 +838,81 @@ import Layout from "../layouts/Layout.astro";
   }
 
   /* Typography */
-  h1 {
-    font-size: 2.8rem;
-  }
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2.2rem; }
+  h3 { font-size: 1.8rem; }
+  h4 { font-size: 1.6rem; }
+  h5 { font-size: 1.4rem; }
+  h6 { font-size: 1.2rem; }
 
-  h2 {
-    font-size: 2.2rem;
-  }
-
-  h3 {
-    font-size: 1.8rem;
-  }
-
-  h4 {
-    font-size: 1.6rem;
-  }
-
-  h5 {
-    font-size: 1.4rem;
-  }
-
-  h6 {
-    font-size: 1.2rem;
-  }
-
-  p,
-  li,
-  a,
-  button,
-  input,
-  textarea {
+  p, li, a, button, input, textarea {
     font-size: 1rem;
   }
-
-  /* Hamburger Menu Styles */
+  /* Mobile Navigation */
   .hamburger {
     display: none;
+    cursor: pointer;
+    padding: 15px;
+    background: none;
+    border: none;
   }
 
+  .hamburger i {
+    font-size: 24px;
+    color: var(--dark-gray);
+  }
+
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-left: 25px;
+  }
+
+  .nav-links li:first-child {
+    margin-left: 0;
+  }
+
+  .nav-links li a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 7px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .nav-links li a:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+  }
+
+  /* Mobile Styles */
   @media (max-width: 768px) {
+    .navbar {
+      flex-direction: row; /* Arrange logo and hamburger in a row */
+      justify-content: space-between; /* Space them apart */
+      align-items: center; /* Vertically align items */
+    }
+
+    .logo {
+      margin-bottom: 0; /* Remove bottom margin */
+    }
+
     .hamburger {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 24px;
-      color: var(--dark-gray);
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 10;
+      display: block; /* Show hamburger icon */
+      position: static; /* Remove absolute positioning */
     }
 
     .nav-links {
       display: none;
       flex-direction: column;
-      position: absolute;
-      top: 80px;
-      left: 0;
       width: 100%;
-      background-color: var(--secondary-color);
-      box-shadow: 0 2px 5px var(--shadow-color);      padding: 20px;
       text-align: center;
-          }
-
-    .nav-links.active {
-      display: flex;
+      margin-top: 10px;
     }
 
     .nav-links li {
@@ -992,13 +921,16 @@ import Layout from "../layouts/Layout.astro";
 
     .nav-links li a {
       display: block;
-      padding: 10px;
+      padding: 15px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
-    .hamburger.active {
-      position: fixed;
-      top: 15px;
-      right: 15px;
+    .nav-links.active {
+      display: flex;
+    }
+
+    .hamburger.active i {
+      color: var(--primary-color);
     }
   }
 </style>
