@@ -677,3 +677,112 @@ textarea {
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
+
+/* Footer Section */
+footer {
+  background-color: var(--dark-gray);
+  color: var(--secondary-color);
+  padding: 50px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: url('https://ik.imagekit.io/5zp8ovb7c/layered-waves_VP9eq0J3w.svg?updatedAt=1718201337199');
+  background-size: cover;
+  z-index: 1;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-col {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-col h3 {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+}
+
+.contact-info,
+.social-links,
+.newsletter {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li,
+.social-links li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info li i,
+.social-links li i {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+.social-links a {
+  color: var(--secondary-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+.newsletter-form {
+  display: flex;
+}
+
+.newsletter-input {
+  padding: 12px;
+  border: none;
+  border-radius: 7px 0 0 7px;
+  width: 70%;
+  color: var(--dark-gray);
+}
+
+.newsletter-button {
+  @extend .cta-button;
+  padding: 12px 20px;
+  border-radius: 0 7px 7px 0;
+  font-size: 1rem;
+}
+
+/* Adjust newsletter input width */
+@media (min-width: 769px) {
+  .newsletter-input {
+    width: 60%; /* Reduce width for larger screens */
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-bottom p,
+.footer-bottom a {
+  color: var(--secondary-color);
+}
