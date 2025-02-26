@@ -629,7 +629,7 @@ import Layout from "../layouts/Layout.astro";
     max-width: 800px;
     margin: 50px auto 0;
     padding: 25px;
-    background: #F5F5F5; /* Very light gray background */
+    background-color: white; /* Explicitly set to pure white */
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -640,12 +640,58 @@ import Layout from "../layouts/Layout.astro";
 
 .testimonial-item p {
     font-size: 1.2rem;
-    color: #1A3C34; /* Dark green for readability */
+    color: #1A3C34; /* Dark green for readability on white */
     font-style: italic;
     margin: 0;
     line-height: 1.6;
     font-weight: 500;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .impact-stats {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally in the column */
+        gap: 20px; /* Maintain spacing between stacked items */
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .impact-section {
+        padding: 50px 0;
+    }
+
+    .impact-section h2 {
+        font-size: 2rem;
+    }
+
+    .impact-stats {
+        gap: 20px;
+    }
+
+    .stat-item {
+        width: 180px;
+        padding: 20px 15px;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+
+    .testimonials-carousel {
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    .testimonial-item p {
+        font-size: 1rem;
+    }
+	}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
