@@ -502,9 +502,18 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .secondary-button {
-    background-color: var(--blue-accent);
-    color: var(--secondary-color);
-  }
+    color: #FFFFFF; 
+    background: linear-gradient(135deg, #66BB6A 0%, #2F4F4F 100%);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.secondary-button:hover {
+    background-color: #81C784; /* Slightly darker green on hover for feedback */
+}
 
 
   /* About Section */
@@ -781,14 +790,6 @@ import Layout from "../layouts/Layout.astro";
     background-color: #558B2F; /* Darker green on hover */
 }
 
-.secondary-button {
-    color: #1A3C34; /* Dark green text for contrast */
-    background-color: #FFFF99; /* Light yellow background */
-}
-
-.secondary-button:hover {
-    background-color: #FFEE58; /* Slightly darker yellow on hover */
-}
 
   /* Blog Section */
   .blog-section {
