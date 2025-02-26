@@ -1,4 +1,14 @@
 import { defineConfig } from 'astro/config';
+import sass from 'sass'; // Import sass as an ESM module
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          implementation: sass, // Use the imported sass module
+        },
+      },
+    },
+  },
+});

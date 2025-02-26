@@ -3,46 +3,51 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Africa Peace Initiative">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <header>
-    <div class="container navbar">
+    <nav class="container navbar">
       <div class="logo">
         <a href="/">
           <img
             src="https://ik.imagekit.io/5zp8ovb7c/Africa%20Peace%20Initiative/api_logo_1?updatedAt=1740494826530"
             alt="Africa Peace Initiative Logo"
             style="height: 60px;"
+            loading="eager"
           />
         </a>
       </div>
-      <button class="hamburger">
+      <button
+        class="hamburger"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
         <i class="fas fa-bars"></i>
       </button>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="/">Who We Are</a></li>
-          <li><a href="#about">Our Work</a></li>
-          <li><a href="#programs">Our Approach</a></li>
-          <li><a href="#get-involved">Get Involved</a></li>
-          <li><a href="#contact">News &amp; Press</a></li>
-          <li><a href="#contact">Resources</a></li>
-        </ul>
-      </nav>
-    </div>
+      <ul class="nav-links">
+        <li><a href="#about">Who We Are</a></li>
+        <li><a href="#programs">Our Approach</a></li>
+        <li><a href="#get-involved">Get Involved</a></li>
+        <li><a href="#contact">News & Press</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="hero-banner">
+  <section id="main-content" class="hero-banner">
     <div class="hero-image">
-      <img src="https://via.placeholder.com/1200x600/4CAF50/FFFFFF?text=DRC+Crisis+Zoom+Event" alt="DRC Crisis Zoom Event" />
+      <img
+        src="https://via.placeholder.com/1200x600/4CAF50/FFFFFF?text=DRC+Crisis+Zoom+Event"
+        alt="DRC Crisis Zoom Event"
+      />
     </div>
     <div class="hero-content container">
-      <h1 class="hero-headline">
-        Join Our Zoom Event: DRC Crisis
-      </h1>
+      <h1 class="hero-headline">Join Our Zoom Event: DRC Crisis</h1>
       <p class="hero-subheadline">
-        Learn about the ongoing crisis in the Democratic Republic of Congo and how you can help.
+        Learn about the ongoing crisis in the Democratic Republic of Congo and
+        how you can help.
       </p>
       <p><b>Date:</b> March 6th, 2025</p>
-      <a href="#" class="cta-button">Register Now</a>
+      <a href="#" class="cta-button primary-button">Register Now</a>
     </div>
   </section>
 
@@ -51,40 +56,38 @@ import Layout from "../layouts/Layout.astro";
       <div class="about-text">
         <h2>Who We Are</h2>
         <p>
-          The Africa Peace Initiative (API) is a pan-African, people-centered organization committed to rethinking peace and security across the continent. We challenge conventional approaches by fostering dialogue, collaboration, technology-driven peacebuilding, and leadership development. Through capacity building, advocacy, mediation, and grassroots engagement, we work to transform conflicts and promote sustainable peace.
+          The Africa Peace Initiative (API) is a pan-African, people-centered
+          organization committed to rethinking peace and security across the
+          continent. We challenge conventional approaches by fostering dialogue,
+          collaboration, technology-driven peacebuilding, and leadership
+          development.
         </p>
         <p>
-          Our work is rooted in African realities, blending indigenous wisdom with modern solutions to tackle political, social, economic, and environmental drivers of conflict.
+          Our work is rooted in African realities, blending indigenous wisdom
+          with modern solutions to tackle political, social, economic, and
+          environmental drivers of conflict.
         </p>
 
         <h3>Our Vision</h3>
         <p>
-          A resilient, just, and peaceful Africa where communities thrive in dignity, security, and mutual respect—reshaping peace through dialogue, innovation, and collective action.
+          A resilient, just, and peaceful Africa where communities thrive in
+          dignity, security, and mutual respect.
         </p>
 
         <h3>Our Mission</h3>
         <p>
-          To rethink and transform peace and security in Africa by addressing root causes of conflict, fostering inclusive dialogue, strengthening leadership for peace, and leveraging technology and storytelling to build resilient communities.
+          To rethink and transform peace and security in Africa by addressing
+          root causes of conflict and leveraging technology and storytelling.
         </p>
 
         <h3>Our Core Values</h3>
         <ul class="about-values">
-          <li><i class="fas fa-users"></i> Ubuntu & Solidarity: Shared humanity and collective responsibility for peace.</li>
-          <li><i class="fas fa-leaf"></i> Inclusivity & Diversity: Amplifying all voices, ensuring marginalized groups, youth, and women are at the center of peace efforts.</li>
-          <li><i class="fas fa-handshake"></i> Innovation & Adaptability: Embracing new ideas, technology, and creative storytelling to drive peace initiatives.</li>
-          <li><i class="fas fa-lightbulb"></i> Accountability & Integrity: Upholding ethical leadership, transparency, and community-driven solutions.</li>
-          <li><i class="fas fa-globe"></i> Sustainability & Local Ownership: Prioritizing homegrown solutions led by African communities and institutions.</li>
-          <li><i class="fas fa-heart"></i> Empathy and Love of the Other: Promoting understanding and compassion as foundations for lasting peace.</li>
-        </ul>
-
-        <h3>Our Approach</h3>
-        <ul class="approach-list">
-          <li><i class="fas fa-comments"></i> Reimagining Peace through Dialogue: Convening cross-border and inter-community conversations, bridging divides, and fostering understanding.</li>
-          <li><i class="fas fa-laptop"></i> Technology & Media for Peace: Harnessing digital tools, social media, and storytelling to counter hate speech and misinformation.</li>
-          <li><i class="fas fa-users"></i> Empowering Leadership & Governance: Training young leaders, policymakers, and community mediators to drive sustainable change.</li>
-          <li><i class="fas fa-coins"></i> Economic Resilience for Stability: Addressing unemployment, inequality, and resource-based conflicts through innovation and social entrepreneurship.</li>
-          <li><i class="fas fa-globe-africa"></i> Climate, Security & Peace Nexus: Tackling the intersection of environmental challenges and conflicts through adaptation and resilience-building.</li>
-          <li><i class="fas fa-balance-scale"></i> Human Rights & Justice: Strengthening legal frameworks, accountability mechanisms, and transitional justice for conflict-affected communities.</li>
+          <li><i class="fas fa-users"></i> Ubuntu & Solidarity</li>
+          <li><i class="fas fa-leaf"></i> Inclusivity & Diversity</li>
+          <li><i class="fas fa-handshake"></i> Innovation & Adaptability</li>
+          <li><i class="fas fa-lightbulb"></i> Accountability & Integrity</li>
+          <li><i class="fas fa-globe"></i> Sustainability & Local Ownership</li>
+          <li><i class="fas fa-heart"></i> Empathy and Love of the Other</li>
         </ul>
       </div>
     </div>
@@ -102,37 +105,37 @@ import Layout from "../layouts/Layout.astro";
           <img
             src="https://via.placeholder.com/400x300"
             alt="Conflict Resolution Workshops"
+            loading="lazy"
           />
           <h3 class="program-title">Conflict Resolution Workshops</h3>
           <p class="program-description">
-            Training community leaders and members in mediation and conflict
-            resolution techniques to build peaceful communities.
+            Training community leaders in mediation techniques.
           </p>
-          <a href="#" class="explore-button">Explore Now</a>
+          <a href="#" class="cta-button secondary-button">Explore Now</a>
         </div>
         <div class="program-card">
           <img
             src="https://via.placeholder.com/400x300"
             alt="Youth Leadership Training"
+            loading="lazy"
           />
           <h3 class="program-title">Youth Leadership Training</h3>
           <p class="program-description">
-            Developing the next generation of peacebuilders through leadership
-            skills, civic engagement, and peace education.
+            Developing the next generation of peacebuilders.
           </p>
-          <a href="#" class="explore-button">Explore Now</a>
+          <a href="#" class="cta-button secondary-button">Explore Now</a>
         </div>
         <div class="program-card">
           <img
             src="https://via.placeholder.com/400x300"
             alt="Sustainable Development Initiatives"
+            loading="lazy"
           />
           <h3 class="program-title">Sustainable Development Initiatives</h3>
           <p class="program-description">
-            Implementing projects focused on economic empowerment, environmental
-            sustainability, and community resilience.
+            Projects for economic empowerment and sustainability.
           </p>
-          <a href="#" class="explore-button">Explore Now</a>
+          <a href="#" class="cta-button secondary-button">Explore Now</a>
         </div>
       </div>
     </div>
@@ -156,21 +159,12 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
       <div class="testimonials-carousel">
-        {/* Add testimonial carousel here - basic example below */}
         <div class="testimonial-item">
           <p>
-            "API's conflict resolution training has transformed our community.
-            We are now better equipped to handle disagreements peacefully." -
-            Community Leader, South Sudan
+            "API's training has transformed our community." - Community Leader,
+            South Sudan
           </p>
         </div>
-        <div class="testimonial-item">
-          <p>
-            "The youth leadership program gave me the confidence and skills to
-            become a change agent in my society." - Program Participant, Nigeria
-          </p>
-        </div>
-        {/* ... more testimonials ... */}
       </div>
     </div>
   </section>
@@ -178,13 +172,10 @@ import Layout from "../layouts/Layout.astro";
   <section id="get-involved" class="cta-section">
     <div class="container">
       <h2>Join the Movement!</h2>
-      <p>
-        Be a part of building a peaceful and prosperous Africa. Your support can
-        make a significant difference.
-      </p>
+      <p>Be a part of building a peaceful and prosperous Africa.</p>
       <div class="cta-buttons">
-        <a href="#" class="donate-button">Donate Today</a>
-        <a href="#" class="volunteer-button">Volunteer Now</a>
+        <a href="#" class="cta-button primary-button">Donate Today</a>
+        <a href="#" class="cta-button secondary-button">Volunteer Now</a>
       </div>
     </div>
   </section>
@@ -195,29 +186,29 @@ import Layout from "../layouts/Layout.astro";
       <div class="blog-grid">
         <div class="blog-post">
           <div class="post-thumbnail">
-            <img src="https://via.placeholder.com/600x400" alt="Blog Post 1" />
+            <img
+              src="https://via.placeholder.com/600x400"
+              alt="Blog Post 1"
+              loading="lazy"
+            />
           </div>
           <div class="post-content">
             <h3 class="post-title">Empowering Women in Peacebuilding</h3>
-            <p class="post-excerpt">
-              Learn about API's recent initiative to empower women as key actors
-              in peacebuilding processes across Africa...
-            </p>
+            <p class="post-excerpt">Learn about API's recent initiative...</p>
             <a href="#" class="read-more-link">Read More</a>
           </div>
         </div>
         <div class="blog-post">
           <div class="post-thumbnail">
-            <img src="https://via.placeholder.com/600x400" alt="Blog Post 2" />
+            <img
+              src="https://via.placeholder.com/600x400"
+              alt="Blog Post 2"
+              loading="lazy"
+            />
           </div>
           <div class="post-content">
-            <h3 class="post-title">
-              Youth Leading the Way to Sustainable Development
-            </h3>
-            <p class="post-excerpt">
-              Discover how young people are driving sustainable development and
-              peace in their communities with API's support...
-            </p>
+            <h3 class="post-title">Youth Leading Sustainable Development</h3>
+            <p class="post-excerpt">Discover how young people are driving...</p>
             <a href="#" class="read-more-link">Read More</a>
           </div>
         </div>
@@ -235,7 +226,8 @@ import Layout from "../layouts/Layout.astro";
           </li>
           <li><i class="fas fa-phone"></i> Phone: +234 800 123 4567</li>
           <li>
-            <i class="fas fa-map-marker-alt"></i> Address: 12 Peace Street, Nairobi, Kenya
+            <i class="fas fa-map-marker-alt"></i> Address: 12 Peace Street, Nairobi,
+            Kenya
           </li>
         </ul>
       </div>
@@ -250,94 +242,156 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <div class="footer-col">
         <h3>Stay Updated</h3>
-        <p>
-          Subscribe to our newsletter to receive the latest news and updates.
-        </p>
+        <p>Subscribe to our newsletter for the latest news.</p>
         <form class="newsletter-form">
           <input
             type="email"
             class="newsletter-input"
             placeholder="Your Email Address"
+            required
           />
-          <button type="submit" class="newsletter-button">Subscribe</button>
+          <button type="submit" class="cta-button primary-button"
+            >Subscribe</button
+          >
         </form>
       </div>
     </div>
     <div class="footer-bottom container">
       <p>
-        &copy; {new Date().getFullYear()} Africa Peace Initiative. All rights reserved.
-        | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        © {new Date().getFullYear()} Africa Peace Initiative. All rights reserved.
+        |
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
       </p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+      hamburger.addEventListener("click", () => {
+        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", !isExpanded);
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
 </Layout>
 
 <style lang="scss">
-  /* Global Styles */
+  /* Variables */
   :root {
-    --primary-color: #4CAF50; /* Updated primary green */
-    --primary-darker: #388E3C; /* Darker shade for hover/active */
-    --secondary-color: #FFFFFF;
-    --dark-gray: #333333;
-    --light-gray: #F7F7F7; /* Slightly lighter light gray */
-    --accent-color: #FFC107; /* Updated accent yellow */
-    --font-family-headings: 'Montserrat', sans-serif;
-    --font-family-body: 'Open Sans', sans-serif;
-    --shadow-color: rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    --primary-color: #2e7d32; /* Earthy green */
+    --primary-darker: #1b5e20;
+    --secondary-color: #ffffff;
+    --off-white: #f5f5f5;
+    --dark-gray: #1a1a1a;
+    --accent-color: #ffca28; /* Warm amber */
+    --blue-accent: #0288d1; /* Calm blue */
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --spacing-unit: 24px;
+    --border-radius: 8px;
   }
 
+  /* Global Styles */
   body {
-    font-family: var(--font-family-body);
+    font-family: "Roboto", sans-serif;
     color: var(--dark-gray);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--light-gray); /* Set light gray as background */
+    background-color: var(--off-white);
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-headings);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
     color: var(--dark-gray);
-    font-weight: bold;
-    margin-top: 1.2rem; /* Slightly reduced top margin */
-    margin-bottom: 0.8rem; /* Slightly reduced bottom margin */
-    line-height: 1.2; /* Improved line height for headings */
+    margin: 1.5rem 0 1rem;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  h4 {
+    font-size: 1.5rem;
   }
 
   p {
-    line-height: 1.7; /* Improved line height for body text */
-    margin-bottom: 1.2rem; /* Slightly increased bottom margin for paragraphs */
-    color: #555; /* Slightly softer text color */
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.1rem;
   }
 
   a {
-    text-decoration: none;
     color: var(--primary-color);
-    transition: color 0.3s ease; /* Smooth color transition for links */
+    transition: color 0.3s ease;
   }
 
   a:hover {
-    color: var(--primary-darker); /* Darker green on hover */
+    color: var(--primary-darker);
   }
 
-  /* Layout and Sections */
   .container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
   }
 
   section {
-    padding: 70px 0; /* Increased section padding */
+    padding: 100px 0;
+    position: relative;
+    animation: fadeIn 0.8s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Skip Link */
+  .skip-link {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px;
+    z-index: 100;
+    transition: top 0.3s ease;
+    &:focus {
+      top: 0;
+    }
   }
 
   /* Header */
   header {
-    background-color: var(--secondary-color); /* White header background */
-    padding: 25px 0; /* Increased header padding */
-    box-shadow: 0 2px 5px var(--shadow-color); /* Add shadow to header */
+    background-color: var(--secondary-color);
+    padding: 30px 0;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
 
   .navbar {
@@ -346,10 +400,6 @@ import Layout from "../layouts/Layout.astro";
     align-items: center;
   }
 
-  .logo img {
-    height: 60px; /* Slightly larger logo */
-  }
-
   .nav-links {
     list-style: none;
     padding: 0;
@@ -357,19 +407,13 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
   }
 
-  .nav-links li {
-    margin-left: 25px; /* Increased spacing between nav links */
-  }
-
-  .nav-links li:first-child {
-    margin-left: 0;
-  }
-
   .nav-links li a {
     color: var(--dark-gray);
-    padding: 12px 18px; /* Adjusted padding for nav links */
-    border-radius: 7px; /* More rounded nav links */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    padding: 14px 20px;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1.1rem;
   }
 
   .nav-links li a:hover {
@@ -377,587 +421,284 @@ import Layout from "../layouts/Layout.astro";
     color: var(--secondary-color);
   }
 
-  .nav-links li a.active {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+  }
+
+  .hamburger i {
+    font-size: 28px;
+    color: var(--dark-gray);
+    transition: color 0.3s ease;
+  }
+
+  .hamburger:hover i {
+    color: var(--primary-color);
   }
 
   /* Hero Banner */
   .hero-banner {
-    position: relative;
-    height: 600px; /* Increased hero height */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    height: 700px;
+    background: linear-gradient(
+      135deg,
+      rgba(46, 125, 50, 0.7),
+      rgba(2, 136, 209, 0.5)
+    );
     color: var(--secondary-color);
-    margin-bottom: 2rem; /* Add margin below hero */
+    text-align: center;
   }
 
-  .hero-banner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Slightly lighter overlay */
-  }
-
-  .hero-banner video,
-  .hero-banner img {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 1s ease-out; /* Smooth zoom effect */
+    transition: transform 1.2s ease;
   }
 
-  .hero-banner:hover video,
   .hero-banner:hover img {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.08);
   }
 
   .hero-content {
-    position: relative;
     z-index: 1;
-    padding: 20px;
+    padding: 40px;
   }
 
   .hero-headline {
-    font-size: 3rem; /* Increased hero headline size */
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 3px var(--shadow-color); /* Text shadow for depth */
+    font-size: 4rem;
+    text-shadow: 3px 3px 6px var(--shadow-color);
   }
 
   .hero-subheadline {
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
-    color: #eee; /* Lighter subheadline color */
-    text-shadow: 1px 1px 2px var(--shadow-color); /* Text shadow for depth */
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 3px var(--shadow-color);
   }
 
+  /* Buttons */
   .cta-button {
     display: inline-block;
-    padding: 14px 35px; /* Adjusted cta button padding */
+    padding: 16px 40px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px var(--shadow-color);
+  }
+
+  .primary-button {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    border-radius: 7px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem; /* Slightly larger font size */
-    box-shadow: 0 4px 7px var(--shadow-color); /* Shadow for button */
   }
 
-  .cta-button:hover {
+  .primary-button:hover {
     background-color: var(--primary-darker);
-    transform: translateY(-2px); /* Slight lift on hover */
-    box-shadow: 0 6px 10px var(--shadow-color); /* Increased shadow on hover */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px var(--shadow-color);
   }
 
-  .cta-button:active {
-    transform: translateY(0); /* No lift on active */
-    box-shadow: 0 4px 7px var(--shadow-color); /* Reset shadow on active */
+  .secondary-button {
+    background-color: var(--blue-accent);
+    color: var(--secondary-color);
   }
+
 
   /* About Section */
   .about-section {
-    background-color: var(--secondary-color); /* White background for about section */
-    box-shadow: 0 -2px 5px var(--shadow-color); /* Top shadow for section separation */
+    background-color: var(--secondary-color);
   }
 
-  .about-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px; /* Increased gap */
-    align-items: center;
-  }
-
-  .about-text {
-    text-align: left;
-  }
-
-  .about-text h2 {
-    font-size: 2.2rem; /* Adjusted about section heading size */
-  }
-
-  .about-values {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px; /* Add margin above values list */
-  }
-
-  .about-values li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px; /* Increased spacing between values */
-    font-size: 1.1rem; /* Slightly larger value text */
-  }
-
-  .about-values li i {
-    margin-right: 15px; /* Increased icon spacing */
-    color: var(--primary-color);
-    font-size: 1.3rem; /* Adjusted icon size */
-  }
-
-  .approach-list {
-    list-style: none;
-    padding: 0;
-  }
-
+  .about-values li,
   .approach-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
   }
 
+  .about-values li:hover,
+  .approach-list li:hover {
+    transform: translateX(10px);
+  }
+
+  .about-values li i,
   .approach-list li i {
-    margin-right: 10px;
-    color: var(--primary-color);
+    color: var(--accent-color);
+    font-size: 1.5rem;
   }
 
   .quote-section {
-    background-color: var(--light-gray);
-    padding: 50px 0; /* Adjusted quote section padding */
-    text-align: center;
-    font-style: italic;
-    font-size: 1.3rem; /* Adjusted quote font size */
-    color: #777; /* Softer quote text color */
-  }
-  .quote-section blockquote {
-    margin: 0 auto;
-    max-width: 800px;
+    background-color: var(--off-white);
+    padding: 60px 0;
+    font-size: 1.5rem;
+    color: #555;
+    border-top: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
   }
 
   /* Programs Section */
   .programs-section {
-    background-color: var(--light-gray);
-  }
-
-  .programs-section h2 {
-    text-align: center; /* Center programs section heading */
-    font-size: 2.5rem; /* Adjusted programs section heading size */
-    margin-bottom: 40px; /* Increased margin below heading */
+    background-color: var(--off-white);
   }
 
   .programs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Slightly wider program cards */
-    gap: 35px; /* Increased gap */
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 40px;
   }
 
   .program-card {
     background-color: var(--secondary-color);
-    border-radius: 10px; /* More rounded program cards */
-    padding: 25px; /* Increased padding */
-    box-shadow: 0 5px 10px var(--shadow-color); /* More pronounced shadow */
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: 0 6px 12px var(--shadow-color);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
   }
 
   .program-card:hover {
-    transform: translateY(-5px); /* Lift on hover */
-    box-shadow: 0 8px 15px var(--shadow-color); /* Increased shadow on hover */
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 10px 20px var(--shadow-color);
+    border-color: var(--accent-color);
   }
 
   .program-card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px; /* Increased image margin */
-    border-radius: 8px; /* Rounded corners for images */
+    border-radius: var(--border-radius);
   }
-
-  .program-title {
-    font-size: 1.7rem; /* Adjusted program title size */
-    margin-bottom: 12px;
-  }
-
-  .program-description {
-    margin-bottom: 20px;
-    color: #666; /* Slightly softer description text */
-  }
-
-  .explore-button {
-    @extend .cta-button;
-    padding: 12px 30px;
-    font-size: 1rem;
-  }
-
 
   /* Impact Section */
   .impact-section {
-    background-color: var(--secondary-color); /* White background for impact section */
-    text-align: center;
-    padding-bottom: 80px; /* Increased padding bottom */
-    box-shadow: 0 -2px 5px var(--shadow-color); /* Top shadow for section separation */
-  }
-  .impact-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+    background-color: var(--secondary-color);
   }
 
   .impact-stats {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 40px; /* Increased margin */
+    gap: 30px;
   }
 
   .stat-item {
-    margin: 30px; /* Increased margin */
-    padding: 25px;
-    background-color: var(--light-gray);
-    border-radius: 10px;
-    box-shadow: inset 0 0 0 2px var(--primary-color); /* Border with primary color */
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--blue-accent)
+    );
+    color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: 0 4px 10px var(--shadow-color);
   }
 
   .stat-number {
-    font-size: 2.5rem; /* Increased stat number size */
-    color: var(--primary-color);
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .stat-label {
-    font-size: 1.1rem;
-    color: var(--dark-gray);
+    font-size: 3rem;
+    text-shadow: 1px 1px 3px var(--shadow-color);
   }
 
   .testimonials-carousel {
-    /* Add carousel styles here if needed */
-    padding: 0 20px;
+    gap: 25px;
   }
 
   .testimonial-item {
-    padding: 30px; /* Increased padding */
-    background-color: var(--light-gray);
-    border-radius: 10px;
-    margin: 20px 0; /* Vertical margin for testimonials */
-    box-shadow: 0 3px 7px var(--shadow-color); /* Shadow for testimonials */
-    font-style: italic;
-    color: #666;
+    background-color: var(--off-white);
+    border-left: 4px solid var(--primary-color);
   }
 
   /* CTA Section */
   .cta-section {
-    background-color: var(--primary-color); /* Primary color background for CTA */
-    text-align: center;
-    color: var(--secondary-color); /* White text color */
-    padding: 100px 0; /* Increased padding */
-  }
-
-  .cta-section h2 {
-    font-size: 3rem; /* Increased CTA heading size */
-    color: var(--secondary-color);
-    margin-bottom: 25px;
-    text-shadow: 2px 2px 3px var(--shadow-color); /* Text shadow for contrast */
-  }
-
-  .cta-section p {
-    color: #eee; /* Lighter paragraph color */
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 2px var(--shadow-color); /* Text shadow for contrast */
+    background: linear-gradient(
+      135deg,
+      var(--primary-color) 0%,
+      var(--blue-accent) 70%
+    );
   }
 
   .cta-buttons {
-    margin-top: 30px;
-  }
-
-  .donate-button,
-  .volunteer-button {
-    @extend .cta-button;
-    margin: 0 15px; /* Increased button spacing */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
   }
 
   /* Blog Section */
   .blog-section {
-    background-color: var(--secondary-color); /* White background for blog */
-    padding-bottom: 80px;
-  }
-  .blog-section h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 40px;
+    background-color: var(--secondary-color);
   }
 
   .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Wider blog posts */
-    gap: 40px; /* Increased gap */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
 
   .blog-post {
-    background-color: var(--light-gray);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px var(--shadow-color); /* Shadow for blog posts */
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
   }
+
   .blog-post:hover {
-    box-shadow: 0 7px 14px var(--shadow-color); /* Increased shadow on hover */
-  }
-
-  .post-thumbnail img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px 10px 0 0; /* Rounded corners for thumbnail */
-  }
-
-  .post-content {
-    padding: 25px;
-  }
-
-  .post-title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-
-  .post-excerpt {
-    margin-bottom: 20px;
-    color: #666;
+    box-shadow: 0 10px 20px var(--shadow-color);
+    transform: translateY(-6px);
   }
 
   .read-more-link {
-    color: var(--primary-color);
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 10px;
+    color: var(--blue-accent);
+    font-weight: 600;
   }
 
-  /* Footer Section */
+  /* Footer */
   footer {
     background-color: var(--dark-gray);
-    color: var(--secondary-color);
-    padding: 50px 0; /* Increased footer padding */
+    padding: 60px 0;
+    position: relative;
   }
 
-  .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Wider footer columns */
-    gap: 40px; /* Increased gap */
-  }
-
-  .footer-col h3 {
-    color: var(--secondary-color);
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 12px;
-    margin-bottom: 25px;
-    font-size: 1.4rem; /* Adjusted footer heading size */
-  }
-
-  .contact-info,
-  .social-links,
-  .newsletter {
-    list-style: none;
-    padding: 0;
-  }
-
-  .contact-info li,
-  .social-links li {
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-  }
-  .contact-info li i,
-  .social-links li i {
-    margin-right: 10px;
-    color: var(--primary-color);
-  }
-
-  .social-links a {
-    color: var(--secondary-color);
-  }
-
-
-  .newsletter-form {
-    display: flex;
+  footer::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 20"><path fill="%231A1A1A" d="M0,0C240,20,480,20,720,0S960,20,1200,20,1440,0,1440,0V20H0Z"/></svg>');
+    background-size: cover;
   }
 
   .newsletter-input {
-    padding: 12px;
-    border: none;
-    border-radius: 7px 0 0 7px;
-    width: 70%;
-    color: var(--dark-gray);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
   }
 
   .newsletter-button {
-    @extend .cta-button;
-    padding: 12px 20px;
-    border-radius: 0 7px 7px 0;
-    font-size: 1rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
   }
-
-  .footer-bottom {
-    text-align: center;
-    margin-top: 40px; /* Increased margin */
-    padding-top: 25px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more visible border */
-  }
-
-  .footer-bottom p,
-  .footer-bottom a {
-    color: var(--secondary-color);
-  }
-
 
   /* Responsive Design */
   @media (max-width: 768px) {
-    .hero-headline {
-      font-size: 2.3rem;
-    }
-    .hero-subheadline {
-      font-size: 1.1rem;
-    }
-    .nav-links {
-      display: none; /* Hide nav links on smaller screens, consider adding a hamburger menu */
-    }
-    .about-content {
-      grid-template-columns: 1fr;
-    }
-    .impact-stats {
-      flex-direction: column;
-      align-items: center;
-    }
-    .stat-item {
-      margin: 20px 0; /* Adjust stat item margin for smaller screens */
-    }
-    .cta-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-    .donate-button,
-    .volunteer-button {
-      margin: 10px 0;
-    }
-    .footer-content {
-      grid-template-columns: 1fr;
-    }
-    .newsletter-form {
-      flex-direction: column;
-    }
-    .newsletter-input {
-      border-radius: 7px 7px 0 0;
-      width: 100%;
-    }
-    .newsletter-button {
-      border-radius: 0 0 7px 7px;
-      width: 100%;
-    }
-    .programs-grid,
-    .blog-grid {
-      grid-template-columns: 1fr; /* Stack program and blog cards on smaller screens */
-    }
-  }
-
-  /* Accessibility */
-  button:focus,
-  a:focus {
-    outline: 2px solid var(--accent-color); /* Example focus style */
-    outline-offset: 2px;
-  }
-
-  /* Typography */
-  h1 { font-size: 2.8rem; }
-  h2 { font-size: 2.2rem; }
-  h3 { font-size: 1.8rem; }
-  h4 { font-size: 1.6rem; }
-  h5 { font-size: 1.4rem; }
-  h6 { font-size: 1.2rem; }
-
-  p, li, a, button, input, textarea {
-    font-size: 1rem;
-  }
-  /* Mobile Navigation */
-  .hamburger {
-    display: none;
-    cursor: pointer;
-    padding: 15px;
-    background: none;
-    border: none;
-  }
-
-  .hamburger i {
-    font-size: 24px;
-    color: var(--dark-gray);
-  }
-
-  .nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-
-  .nav-links li {
-    margin-left: 25px;
-  }
-
-  .nav-links li:first-child {
-    margin-left: 0;
-  }
-
-  .nav-links li a {
-    color: var(--dark--gray);
-    text-decoration: none;
-    padding: 12px 18px;
-    border-radius: 7px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .nav-links li a:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-  }
-
-  /* Mobile Styles */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: row; /* Arrange logo and hamburger in a row */
-      justify-content: space-between; /* Space them apart */
-      align-items: center; /* Vertically align items */
-    }
-
-    .logo {
-      margin-bottom: 0; /* Remove bottom margin */
-    }
-
     .hamburger {
-      display: block; /* Show hamburger icon */
-      position: static; /* Remove absolute positioning */
+      display: block;
     }
-
     .nav-links {
       display: none;
       flex-direction: column;
       width: 100%;
-      text-align: center;
-      margin-top: 10px;
     }
-
-    .nav-links li {
-      margin: 0;
-    }
-
-    .nav-links li a {
-      display: block;
-      padding: 15px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
     .nav-links.active {
       display: flex;
     }
-
-    .hamburger.active i {
-      color: var(--primary-color);    }
+    .nav-links li a {
+      padding: 20px;
+    }
+    .hero-headline {
+      font-size: 2.8rem;
+    }
+    .hero-subheadline {
+      font-size: 1.3rem;
+    }
+    .cta-buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
+    .programs-grid,
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+    .impact-stats {
+      flex-direction: column;
+    }
   }
 </style>
