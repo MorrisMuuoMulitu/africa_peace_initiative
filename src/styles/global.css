@@ -5,10 +5,12 @@
   --secondary-color: #FFFFFF;
   --dark-gray: #333333;
   --light-gray: #F7F7F7;
-  --accent-color: #FFC107;
+  --accent-color: #FFC107; /* Changed accent color to amber */
   --font-family-headings: 'Nunito Sans', sans-serif;
   --font-family-body: 'Nunito Sans', sans-serif;
   --shadow-color: rgba(0, 0, 0, 0.1);
+  --footer-background: #06431a; /* New footer background color */
+  --footer-text-color: white; /* Text color for better contrast */
 }
 
 body {
@@ -386,7 +388,8 @@ header {
 .donate-button,
 .volunteer-button {
   @extend .cta-button;
-  margin: 0 15px;
+  padding: 12px 30px;
+  font-size: 1rem;
 }
 
 /* Blog Section */
@@ -449,8 +452,8 @@ header {
 
 /* Footer Section */
 footer {
-  background-color: var(--dark-gray);
-  color: var(--secondary-color);
+  background-color: var(--footer-background); /* Use the new color variable */
+  color: var(--footer-text-color); /* Use the new text color variable */
   padding: 50px 0;
   position: relative;
   overflow: hidden;
@@ -463,7 +466,7 @@ footer {
 }
 
 .footer-col h3 {
-  color: var(--secondary-color);
+  color: var(--footer-text-color); /* Use the new text color variable */
   border-bottom: 2px solid var(--primary-color);
   padding-bottom: 12px;
   margin-bottom: 25px;
@@ -488,11 +491,11 @@ footer {
 .contact-info li i,
 .social-links li i {
   margin-right: 10px;
-  color: var(--primary-color);
+  color: var(--footer-text-color); /* Use the new text color variable */
 }
 
 .social-links a {
-  color: var(--secondary-color);
+  color: var(--footer-text-color); /* Use the new text color variable */
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -529,7 +532,7 @@ footer {
 
 .footer-bottom p,
 .footer-bottom a {
-  color: var(--secondary-color);
+  color: var(--footer-text-color); /* Use the new text color variable */
 }
 
 /* Footer animations */
@@ -680,8 +683,8 @@ textarea {
 
 /* Footer Section */
 footer {
-  background-color: var(--dark-gray);
-  color: var(--secondary-color);
+  background-color: var(--footer-background);
+  color: var(--footer-text-color);
   padding: 50px 0;
   position: relative;
   overflow: hidden;
@@ -711,7 +714,7 @@ footer::before {
 }
 
 .footer-col h3 {
-  color: var(--secondary-color);
+  color: var(--footer-text-color);
   border-bottom: 2px solid var(--primary-color);
   padding-bottom: 12px;
   margin-bottom: 25px;
@@ -736,11 +739,11 @@ footer::before {
 .contact-info li i,
 .social-links li i {
   margin-right: 10px;
-  color: var(--primary-color);
+  color: var(--footer-text-color);
 }
 
 .social-links a {
-  color: var(--secondary-color);
+  color: var(--footer-text-color);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -766,13 +769,7 @@ footer::before {
   padding: 12px 20px;
   border-radius: 0 7px 7px 0;
   font-size: 1rem;
-}
-
-/* Adjust newsletter input width */
-@media (min-width: 769px) {
-  .newsletter-input {
-    width: 60%; /* Reduce width for larger screens */
-  }
+  color: var(--footer-text-color); /* Ensure button text is visible */
 }
 
 .footer-bottom {
@@ -784,5 +781,12 @@ footer::before {
 
 .footer-bottom p,
 .footer-bottom a {
-  color: var(--secondary-color);
+  color: var(--footer-text-color);
+}
+
+/* Adjust newsletter input width */
+@media (min-width: 769px) {
+  .newsletter-input {
+    width: 60%; /* Reduce width for larger screens */
+  }
 }

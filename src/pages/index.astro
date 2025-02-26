@@ -167,7 +167,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </div>
-  </section>
+</section>
 
   <section id="get-involved" class="cta-section">
     <div class="container">
@@ -224,7 +224,7 @@ import Layout from "../layouts/Layout.astro";
           <li>
             <i class="fas fa-envelope"></i> Email: info@africapeaceinitiative.org
           </li>
-          <li><i class="fas fa-phone"></i> Phone: +234 800 123 4567</li>
+          <li><i class="fas fa-phone"></i> Phone: +254 705 329 860</li>
           <li>
             <i class="fas fa-map-marker-alt"></i> Address: 12 Peace Street, Nairobi,
             Kenya
@@ -257,12 +257,12 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
     <div class="footer-bottom container">
-      <p>
+    <p style="color: white;">
         © {new Date().getFullYear()} Africa Peace Initiative. All rights reserved.
         |
         <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-      </p>
-    </div>
+    </p>
+</div>
   </footer>
 
   <script>
@@ -281,14 +281,14 @@ import Layout from "../layouts/Layout.astro";
 <style lang="scss">
   /* Variables */
   :root {
-    --primary-color: #2e7d32; /* Earthy green */
-    --primary-darker: #1b5e20;
+    --primary-color: #083313; /* Earthy green */
+    --primary-darker: #4e514b;
     --secondary-color: #ffffff;
     --off-white: #f5f5f5;
-    --dark-gray: #1a1a1a;
-    --accent-color: #ffca28; /* Warm amber */
-    --blue-accent: #0288d1; /* Calm blue */
-    --shadow-color: rgba(0, 0, 0, 0.15);
+    --dark-green: #06431a;
+    --accent-color: #e4decc; 
+    --blue-accent: #74a382; 
+    --shadow-color: rgb(132,124,100);
     --spacing-unit: 24px;
     --border-radius: 8px;
   }
@@ -296,7 +296,7 @@ import Layout from "../layouts/Layout.astro";
   /* Global Styles */
   body {
     font-family: "Roboto", sans-serif;
-    color: var(--dark-gray);
+    color: var(--dark-green);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -311,7 +311,7 @@ import Layout from "../layouts/Layout.astro";
   h6 {
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
-    color: var(--dark-gray);
+    color: var(--dark-green);
     margin: 1.5rem 0 1rem;
     line-height: 1.2;
     letter-spacing: 0.5px;
@@ -408,7 +408,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .nav-links li a {
-    color: var(--dark-gray);
+    color: var(--dark-green);
     padding: 14px 20px;
     border-radius: var(--border-radius);
     transition: all 0.3s ease;
@@ -431,7 +431,7 @@ import Layout from "../layouts/Layout.astro";
 
   .hamburger i {
     font-size: 28px;
-    color: var(--dark-gray);
+    color: var(--dark-green);
     transition: color 0.3s ease;
   }
 
@@ -568,55 +568,181 @@ import Layout from "../layouts/Layout.astro";
     border-radius: var(--border-radius);
   }
 
-  /* Impact Section */
-  .impact-section {
-    background-color: var(--secondary-color);
-  }
 
-  .impact-stats {
-    gap: 30px;
-  }
+/* Impact Section */
+/* Impact Section */
+.impact-section {
+    background-color: white;
+    padding: 80px 0;
+    color: #333;
+}
 
-  .stat-item {
+.impact-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1A3C34; /* Dark green for heading */
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.impact-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Even spacing between stats */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    background: linear-gradient(135deg, #66BB6A 0%, #2F4F4F 100%); /* Gradient green for sleek look */
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 12px; /* Rounded corners for modern feel */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 200px; /* Fixed width for uniformity */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.stat-item:hover {
+    transform: translateY(-5px); /* Lift slightly on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
+}
+
+.stat-number {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 0;
+    color: white; /* Changed to white for visibility on green background */
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    margin: 10px 0 0;
+    font-weight: 500;
+    opacity: 0.9; /* Slightly faded for hierarchy */
+    color: white; /* Changed to white for visibility on green background */
+}
+
+.testimonials-carousel {
+    max-width: 800px;
+    margin: 50px auto 0;
+    padding: 25px;
+    background: #F5F5F5; /* Very light gray background */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item {
+    text-align: center;
+}
+
+.testimonial-item p {
+    font-size: 1.2rem;
+    color: #1A3C34; /* Dark green for readability */
+    font-style: italic;
+    margin: 0;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .impact-section {
+        padding: 50px 0;
+    }
+
+    .impact-section h2 {
+        font-size: 2rem;
+    }
+
+    .impact-stats {
+        gap: 20px;
+    }
+
+    .stat-item {
+        width: 180px;
+        padding: 20px 15px;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+
+    .testimonials-carousel {
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    .testimonial-item p {
+        font-size: 1rem;
+    }
+}
+
+ /* CTA Section */
+.cta-section {
     background: linear-gradient(
-      135deg,
-      var(--primary-color),
-      var(--blue-accent)
-    );
-    color: var(--secondary-color);
-    border-radius: var(--border-radius);
-    padding: 30px;
-    box-shadow: 0 4px 10px var(--shadow-color);
-  }
-
-  .stat-number {
-    font-size: 3rem;
-    text-shadow: 1px 1px 3px var(--shadow-color);
-  }
-
-  .testimonials-carousel {
-    gap: 25px;
-  }
-
-  .testimonial-item {
-    background-color: var(--off-white);
-    border-left: 4px solid var(--primary-color);
-  }
-
-  /* CTA Section */
-  .cta-section {
-    background: linear-gradient(
-      135deg,
-      var(--primary-color) 0%,
-      var(--blue-accent) 70%
-    );
-  }
+        135deg,
+        var(--primary-color) 0%,
+        rgba(26, 60, 52, 0.9) 100%
+    ), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><rect width="10" height="10" fill="%231A3C34" opacity="0.1"/></svg>');
+    background-size: cover, 10px 10px;
+}
 
   .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
   }
+  
+  .cta-section h2 {
+    color: white;
+    font-size: 2.5rem; /* Adjust as needed */
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    color: #FFFF99; /* Light yellow for readability */
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    justify-content: center;
+}
+
+.cta-button {
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.primary-button {
+    color: white;
+    background-color: #66BB6A; /* Medium green, vibrant yet professional */
+}
+
+.primary-button:hover {
+    background-color: #558B2F; /* Darker green on hover */
+}
+
+.secondary-button {
+    color: #1A3C34; /* Dark green text for contrast */
+    background-color: #FFFF99; /* Light yellow background */
+}
+
+.secondary-button:hover {
+    background-color: #FFEE58; /* Slightly darker yellow on hover */
+}
 
   /* Blog Section */
   .blog-section {
@@ -642,13 +768,13 @@ import Layout from "../layouts/Layout.astro";
   }
 
   /* Footer */
-  footer {
-    background-color: var(--dark-gray);
+footer {
+    background-color: var(--dark-green);
     padding: 60px 0;
     position: relative;
-  }
+}
 
-  footer::before {
+footer::before {
     content: "";
     position: absolute;
     top: -20px;
@@ -657,15 +783,44 @@ import Layout from "../layouts/Layout.astro";
     height: 20px;
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 20"><path fill="%231A1A1A" d="M0,0C240,20,480,20,720,0S960,20,1200,20,1440,0,1440,0V20H0Z"/></svg>');
     background-size: cover;
-  }
+}
 
-  .newsletter-input {
+/* Footer Columns */
+.footer-col h3 {
+    color: white;
+}
+
+.footer-col p {
+    color: #FFFF99;
+}
+
+.footer-col .social-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-col .social-links a:hover {
+    color: #FFFF99; /* Light yellow for hover, visible against green */
+}
+
+/* Footer Bottom */
+.footer-bottom p {
+    color: white;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Newsletter Form */
+.newsletter-input {
     border-radius: var(--border-radius) 0 0 var(--border-radius);
-  }
+}
 
-  .newsletter-button {
+.newsletter-button {
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  }
+}
 
   /* Responsive Design */
   @media (max-width: 768px) {
@@ -700,5 +855,30 @@ import Layout from "../layouts/Layout.astro";
     .impact-stats {
       flex-direction: column;
     }
+  }
+
+  /* About Section Styles */
+  .about-values {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Adjust gap as needed */
+  }
+
+  .about-values li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light background */
+  }
+
+  .about-values li i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+    color: #ffca28; /* Amber color */
   }
 </style>
