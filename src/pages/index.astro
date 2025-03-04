@@ -226,7 +226,7 @@ import Layout from "../layouts/Layout.astro";
           <li>
             <i class="fas fa-envelope"></i> Email: info@africapeaceinitiative.org
           </li>
-          <li><i class="fas fa-phone"></i> Phone: +254 705 329 860</li>
+          <li><i class="fas fa-phone"></i> Phone: +1 (929) 761-2735</li>
           <li>
             <i class="fas fa-map-marker-alt"></i> Address: 12 Peace Street, Nairobi,
             Kenya
@@ -580,23 +580,37 @@ import Layout from "../layouts/Layout.astro";
     background-color: var(--secondary-color);
   }
 
-  .about-values li,
-  .approach-list li {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-  }
+  .about-values,
+.approach-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding-left: 0;
+  list-style: none;
+  width: 100%;
+}
 
-  .about-values li:hover,
-  .approach-list li:hover {
-    transform: translateX(10px);
-  }
+.about-values li,
+.approach-list li {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.3s ease;
+  min-width: 280px;
+}
 
-  .about-values li i,
-  .approach-list li i {
-    color: var(--accent-color);
-    font-size: 1.5rem;
-  }
+.about-values li:hover,
+.approach-list li:hover {
+  transform: translateX(10px);
+}
+
+.about-values li i,
+.approach-list li i {
+  color: var(--accent-color);
+  font-size: 2rem;
+}
 
   .quote-section {
     background-color: var(--off-white);
