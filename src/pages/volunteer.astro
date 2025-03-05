@@ -1,0 +1,265 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Volunteer - Africa Peace Initiative">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header>
+    <nav class="container navbar">
+      <div class="logo">
+        <a href="/">
+          <img
+            src="https://ik.imagekit.io/5zp8ovb7c/Africa%20Peace%20Initiative/API%20logo-12.png?updatedAt=1741074058148"
+            alt="Africa Peace Initiative Logo"
+            style="height: 60px;"
+            loading="eager"
+          />
+        </a>
+      </div>
+      <button
+        class="hamburger"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/">Who We Are</a></li>
+        <li><a href="/">Our Approach</a></li>
+        <li><a href="/">Get Involved</a></li>
+        <li><a href="/">News & Press</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero-banner">
+    <div class="hero-content container">
+      <h1 class="hero-headline">
+        Join Our Team of Volunteers
+      </h1>
+      <p class="hero-subheadline">
+        Make a difference by volunteering your time and skills to support our initiatives.
+      </p>
+    </div>
+  </section>
+
+  <section class="volunteer-section">
+    <div class="container">
+      <h2>Volunteer Information Form</h2>
+      <p>Please fill out the form below to express your interest in volunteering with us.</p>
+      <form class="volunteer-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+        <div class="form-group">
+          <label for="availability">Availability:</label>
+          <select id="availability" name="availability">
+            <option value="weekdays">Weekdays</option>
+            <option value="weekends">Weekends</option>
+            <option value="evenings">Evenings</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="skills">Skills:</label>
+          <textarea id="skills" name="skills" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="interests">Areas of Interest:</label>
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" name="interests" value="community-outreach" />
+              Community Outreach
+            </label>
+            <label>
+              <input type="checkbox" name="interests" value="fundraising" />
+              Fundraising
+            </label>
+            <label>
+              <input type="checkbox" name="interests" value="event-planning" />
+              Event Planning
+            </label>
+            <label>
+              <input type="checkbox" name="interests" value="administrative-support" />
+              Administrative Support
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="cta-button primary-button">Submit</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <ul class="contact-info">
+          <li>
+            <i class="fas fa-envelope"></i> Email: info@africapeaceinitiative.org
+          </li>
+          <li><i class="fas fa-phone"></i> Phone: +1 (929) 761-2735</li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i> Address: 12 Peace Street, Nairobi,
+            Kenya
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <ul class="social-links">
+          <li><a href="#"><i class="fas fa-facebook"></i> Facebook</a></li>
+          <li><a href="#"><i class="fas fa-twitter"></i> Twitter</a></li>
+          <li><a href="#"><i class="fas fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fas fa-linkedin"></i> LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter for the latest news.</p>
+        <form class="newsletter-form">
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="Your Email Address"
+            required
+          />
+          <button type="submit" class="cta-button primary-button">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p style="color: white;">
+        © {new Date().getFullYear()} Africa Peace Initiative. All rights reserved.
+        |
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+</Layout>
+
+<style lang="scss">
+  .hero-banner {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--secondary-color);
+    background: rgba(46, 139, 87, 0.7);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(46, 139, 87, 0.4);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .hero-headline {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      color: var(--secondary-color);
+    }
+
+    .hero-subheadline {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+      color: var(--off-white);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .volunteer-section {
+    padding: 60px 0;
+    background-color: var(--off-white);
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--dark-green);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: var(--neutral-dark);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .volunteer-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: 1.1rem;
+          color: var(--neutral-dark);
+          margin-bottom: 5px;
+        }
+
+        input,
+        textarea,
+        select {
+          padding: 12px;
+          font-size: 1.1rem;
+          border: 1px solid var(--neutral-light);
+          border-radius: var(--border-radius);
+        }
+
+        textarea {
+          resize: vertical;
+        }
+
+        .checkbox-group {
+          display: flex;
+          flex-direction: column;
+
+          label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+
+            input[type="checkbox"] {
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+
+      .cta-button {
+        margin-top: 20px;
+      }
+    }
+  }
+</style>
