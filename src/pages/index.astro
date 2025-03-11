@@ -411,14 +411,29 @@ import Layout from "../layouts/Layout.astro";
         document.addEventListener("DOMContentLoaded", () => {
             const hamburger = document.querySelector(".hamburger");
             const navLinks = document.querySelector(".nav-links");
+
+            // Debugging: Check if elements are found
+            if (!hamburger || !navLinks) {
+                console.error(
+                    "Error: Hamburger or navLinks element not found!",
+                );
+                return;
+            }
+
             hamburger.addEventListener("click", () => {
                 const isExpanded =
                     hamburger.getAttribute("aria-expanded") === "true";
                 hamburger.setAttribute(
                     "aria-expanded",
                     (!isExpanded).toString(),
-                ); // Fixed line
+                );
                 navLinks.classList.toggle("active");
+                hamburger
+                    .querySelector("i")
+                    .classList.toggle("fa-bars", !isExpanded);
+                hamburger
+                    .querySelector("i")
+                    .classList.toggle("fa-times", isExpanded);
             });
         });
     </script>
