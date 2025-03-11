@@ -414,7 +414,10 @@ import Layout from "../layouts/Layout.astro";
             hamburger.addEventListener("click", () => {
                 const isExpanded =
                     hamburger.getAttribute("aria-expanded") === "true";
-                hamburger.setAttribute("aria-expanded", !isExpanded);
+                hamburger.setAttribute(
+                    "aria-expanded",
+                    (!isExpanded).toString(),
+                ); // Fixed line
                 navLinks.classList.toggle("active");
             });
         });
