@@ -375,25 +375,35 @@ import Layout from "../layouts/Layout.astro";
                 </div>
             </div>
 
-            <!-- Newsletter -->
+            <!-- Newsletter (Centered) -->
             <div class="footer-col footer-newsletter">
-                <h3>Stay Updated</h3>
-                <p>Subscribe to our newsletter for the latest news.</p>
-                <form class="newsletter-form" action="/subscribe" method="POST">
-                    <div class="input-group">
-                        <input
-                            type="email"
-                            name="email"
-                            class="newsletter-input"
-                            placeholder="Your Email Address"
-                            required
-                            aria-label="Email address for newsletter subscription"
-                        />
-                        <button type="submit" class="cta-button primary-button">
-                            Subscribe
-                        </button>
-                    </div>
-                </form>
+                <div class="newsletter-wrapper">
+                    <p class="newsletter-text">
+                        Subscribe to our newsletter for the latest news.
+                    </p>
+                    <form
+                        class="newsletter-form"
+                        action="/subscribe"
+                        method="POST"
+                    >
+                        <div class="input-group">
+                            <input
+                                type="email"
+                                name="email"
+                                class="newsletter-input"
+                                placeholder="morrismulitu@icloud.com"
+                                required
+                                aria-label="Email address for newsletter subscription"
+                            />
+                            <button
+                                type="submit"
+                                class="cta-button primary-button"
+                            >
+                                SUBSCRIBE
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
@@ -1060,14 +1070,14 @@ import Layout from "../layouts/Layout.astro";
         font-weight: 600;
     }
 
-    // Define SASS variables for colors (used for SASS functions like darken)
-    $accent-yellow: #ffff99; // Define the color value directly for SASS
+    // Define SASS variables for colors
+    $accent-yellow: #ffff99;
     $dark-green: #1a2526;
     $gradient-start: #1a2526;
     $gradient-end: #2e4a4a;
     $glow-color: rgba(255, 255, 153, 0.7);
 
-    // CSS Custom Properties (for runtime use in the browser)
+    // CSS Custom Properties (for runtime use)
     :root {
         --dark-green: #{$dark-green};
         --accent-yellow: #{$accent-yellow};
@@ -1237,30 +1247,47 @@ import Layout from "../layouts/Layout.astro";
             }
         }
 
-        // Newsletter Section
+        // Newsletter Section (Centered)
         .footer-newsletter {
+            .newsletter-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 200px; // Ensures vertical centering on the screen
+                text-align: center;
+            }
+
+            .newsletter-text {
+                color: var(--accent-yellow);
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+                max-width: 400px;
+            }
+
             .newsletter-form {
                 .input-group {
                     display: flex;
                     gap: 1rem;
+                    align-items: center;
 
                     @media (max-width: 768px) {
                         flex-direction: column;
                         align-items: center;
-                        gap: 0.5rem;
+                        gap: 1rem;
                     }
                 }
 
                 .newsletter-input {
-                    padding: 1rem;
+                    padding: 1rem 1.5rem;
                     border: 2px solid var(--accent-yellow);
                     border-radius: 25px;
                     background: rgba(255, 255, 255, 0.1);
                     color: var(--white);
-                    width: 100%;
-                    max-width: 300px;
+                    width: 300px;
                     font-size: 1rem;
                     transition: all 0.3s ease;
+                    text-align: center;
 
                     &::placeholder {
                         color: rgba(255, 255, 153, 0.7);
@@ -1280,15 +1307,13 @@ import Layout from "../layouts/Layout.astro";
                     border: none;
                     border-radius: 25px;
                     cursor: pointer;
-                    font-size: 1rem;
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
                     transition: all 0.3s ease;
                     box-shadow: 0 5px 15px rgba(255, 255, 153, 0.3);
 
                     &:hover {
-                        // Use SASS variable with darken (now works since $accent-yellow is a color)
                         background: linear-gradient(
                             45deg,
                             darken($accent-yellow, 10%),
@@ -1296,10 +1321,6 @@ import Layout from "../layouts/Layout.astro";
                         );
                         transform: translateY(-2px);
                         box-shadow: 0 7px 20px var(--glow-color);
-                    }
-
-                    i {
-                        font-size: 1.2rem;
                     }
                 }
             }
@@ -1368,8 +1389,24 @@ import Layout from "../layouts/Layout.astro";
                 font-size: 1.3rem;
             }
 
-            .footer-newsletter .newsletter-input {
-                max-width: 100%;
+            .footer-newsletter {
+                .newsletter-wrapper {
+                    min-height: 150px; // Adjust for smaller screens
+                }
+
+                .newsletter-input {
+                    width: 100%;
+                    max-width: 100%;
+                }
+
+                .newsletter-text {
+                    font-size: 1rem;
+                }
+
+                .cta-button {
+                    font-size: 1rem;
+                    padding: 0.75rem 1.5rem;
+                }
             }
 
             .footer-bottom p {
