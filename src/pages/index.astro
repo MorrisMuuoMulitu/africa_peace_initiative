@@ -811,53 +811,66 @@ import Layout from "../layouts/Layout.astro";
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 28px; /* Slightly increased for breathing room */
+        gap: 24px;
         padding-left: 0;
         list-style: none;
         width: 100%;
-        max-width: 700px; /* Added to constrain width on larger screens */
-        margin: 0 auto; /* Centers the list horizontally */
-        background: linear-gradient(
-            to bottom,
-            rgba(245, 245, 245, 0.5),
-            rgba(255, 255, 255, 1)
-        ); /* Subtle gradient background */
-        padding: 20px; /* Adds padding around the list */
-        border-radius: 12px; /* Softens the container */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
+        max-width: 700px; /* Constrains width on smaller screens */
+        margin: 0 auto;
+        padding: 20px;
+        background: #fff; /* Matches your image's light background */
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
     .about-values li {
         font-size: 1.4rem;
         display: flex;
         align-items: center;
-        gap: 18px; /* Slightly increased for better spacing */
-        transition: all 0.3s ease; /* Expanded to include background transition */
+        gap: 16px;
+        transition: transform 0.3s ease;
         min-width: 280px;
-        padding: 12px 20px; /* Adds internal padding for a "card-like" feel */
-        background: #fff; /* White background for each item */
-        border-radius: 8px; /* Rounded corners */
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); /* Subtle shadow */
-        width: 100%; /* Ensures consistency across items */
-        max-width: 500px; /* Limits item width for readability */
+        padding: 12px 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        width: 100%;
     }
 
     .about-values li:hover {
-        transform: translateX(10px); /* Kept your hover effect */
-        background: var(--accent-color); /* Changes background on hover */
-        color: #fff; /* Text turns white on hover for contrast */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+        transform: translateX(10px);
     }
 
     .about-values li i {
-        color: var(--accent-color); /* Kept your accent color variable */
+        color: #2f855a; /* Green accent color from your image */
         font-size: 2rem;
-        transition: transform 0.3s ease; /* Added for icon animation */
     }
 
-    .about-values li:hover i {
-        color: #fff; /* Icon turns white on hover to match text */
-        transform: scale(1.1); /* Slight icon enlargement on hover */
+    /* Media query for large screens (e.g., tablets and desktops) */
+    @media (min-width: 768px) {
+        .about-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1200px; /* Allows wider layout on large screens */
+            padding: 30px;
+        }
+
+        .about-values li {
+            flex-direction: column; /* Stack icon above text on large screens */
+            text-align: center;
+            padding: 20px;
+            min-width: 0; /* Reset min-width for grid flexibility */
+        }
+
+        .about-values li i {
+            font-size: 2.5rem; /* Slightly larger icons for emphasis */
+            margin-bottom: 10px; /* Space between icon and text */
+        }
+
+        .about-values li:hover {
+            transform: translateY(-5px); /* Vertical lift on hover for grid */
+        }
     }
 
     .quote-section {
