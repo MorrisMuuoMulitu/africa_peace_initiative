@@ -66,7 +66,6 @@
           </div>
         </div>
       </section>
-
       <section id="about" class="about-section">
         <div class="container about-content">
           <div class="about-text">
@@ -220,6 +219,27 @@
         </div>
       </section>
 
+      <section id="partners" class="partners-section">
+  <div class="container">
+    <h2>Our Partners</h2>
+    <p>We are proud to partner with these organizations:</p>
+    <div class="partner-logos">
+      <!-- Partner 1 -->
+      <a href="https://www.boschalumni.net/" target="_blank" rel="noopener noreferrer">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Africa%20Peace%20Initiative/bosch.png?updatedAt=1741675559148" alt="Bosch Alumni Network" class="partner-logo">
+      </a>
+      <!-- Partner 2 -->
+      <a href="https://www.chevening.org/resource-hub/alumni/" target="_blank" rel="noopener noreferrer">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Africa%20Peace%20Initiative/chevening.png?updatedAt=1741675917115" alt="Chevening Alumni" class="partner-logo">
+      </a>
+      <!-- Partner 3 -->
+      <a href="https://mo.ibrahim.foundation/" target="_blank" rel="noopener noreferrer">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Africa%20Peace%20Initiative/mo_ibrahim.png?updatedAt=1741676040324" alt="Mo Ibrahim Foundation" class="partner-logo">
+      </a>
+    </div>
+  </div>
+</section>
+
       <footer id="contact">
         <div class="container footer-content">
           <div class="footer-col">
@@ -268,7 +288,7 @@
             <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
           </p>
         </div>
-      </footer>
+      </footer
 
       <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -1006,10 +1026,10 @@
         }
 
         .nav-links {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-          margin-top: 10px;
+				display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 10px;
         }
 
         .nav-links.active {
@@ -1099,4 +1119,56 @@
           border-radius: 7px;
         }
       }
-    </style>
+
+      .partners-section {
+        background-color: var(--off-white);
+        padding: 80px 0;
+      }
+
+      .partners-section .container {
+        text-align: center;
+      }
+
+      .partners-section h2 {
+        font-size: 2.5rem;
+        color: var(--dark-green);
+        margin-bottom: 30px;
+      }
+
+      .partners-section p {
+        font-size: 1.2rem;
+        color: var(--neutral-dark);
+        margin-bottom: 40px;
+      }
+    
+
+    /* line 724 */
+    /* .nav-links {
+      flex-direction:row;
+			width: 100%;
+      margin-top: 10px;
+    } */
+
+    /* line 1018 */
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    /* line 1017 */
+    /* flex-direction width: 100%; */
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+  </style>
