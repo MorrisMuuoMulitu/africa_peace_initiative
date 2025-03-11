@@ -434,8 +434,8 @@ import Layout from "../layouts/Layout.astro";
         /* Honeydew */
         --dark-green: #006400;
         /* Dark Green */
-        --accent-color: #a0522d;
-        /* Sienna */
+        --accent-color: #38761d;
+        /* Green */
         --blue-accent: #4682b4;
         /* Steel Blue */
         --shadow-color: rgba(0, 0, 0, 0.1);
@@ -807,36 +807,57 @@ import Layout from "../layouts/Layout.astro";
         background-color: var(--secondary-color);
     }
 
-    .about-values,
-    .approach-list {
+    .about-values {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 24px;
+        gap: 28px; /* Slightly increased for breathing room */
         padding-left: 0;
         list-style: none;
         width: 100%;
+        max-width: 700px; /* Added to constrain width on larger screens */
+        margin: 0 auto; /* Centers the list horizontally */
+        background: linear-gradient(
+            to bottom,
+            rgba(245, 245, 245, 0.5),
+            rgba(255, 255, 255, 1)
+        ); /* Subtle gradient background */
+        padding: 20px; /* Adds padding around the list */
+        border-radius: 12px; /* Softens the container */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
     }
 
-    .about-values li,
-    .approach-list li {
+    .about-values li {
         font-size: 1.4rem;
         display: flex;
         align-items: center;
-        gap: 16px;
-        transition: transform 0.3s ease;
+        gap: 18px; /* Slightly increased for better spacing */
+        transition: all 0.3s ease; /* Expanded to include background transition */
         min-width: 280px;
+        padding: 12px 20px; /* Adds internal padding for a "card-like" feel */
+        background: #fff; /* White background for each item */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); /* Subtle shadow */
+        width: 100%; /* Ensures consistency across items */
+        max-width: 500px; /* Limits item width for readability */
     }
 
-    .about-values li:hover,
-    .approach-list li:hover {
-        transform: translateX(10px);
+    .about-values li:hover {
+        transform: translateX(10px); /* Kept your hover effect */
+        background: var(--accent-color); /* Changes background on hover */
+        color: #fff; /* Text turns white on hover for contrast */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
     }
 
-    .about-values li i,
-    .approach-list li i {
-        color: var(--accent-color);
+    .about-values li i {
+        color: var(--accent-color); /* Kept your accent color variable */
         font-size: 2rem;
+        transition: transform 0.3s ease; /* Added for icon animation */
+    }
+
+    .about-values li:hover i {
+        color: #fff; /* Icon turns white on hover to match text */
+        transform: scale(1.1); /* Slight icon enlargement on hover */
     }
 
     .quote-section {
