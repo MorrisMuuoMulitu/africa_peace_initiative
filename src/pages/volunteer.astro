@@ -1,9 +1,238 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+// Mock translations (replace with actual translations in production)
+const translations = {
+  en: {
+    title: "Volunteer - Africa Peace Initiative",
+    heroHeadline: "Join Our Team of Volunteers",
+    heroSubheadline:
+      "Make a difference by volunteering your time and skills to support our initiatives.",
+    formTitle: "Volunteer Information Form",
+    formSubtitle:
+      "Please fill out the form below to express your interest in volunteering with us.",
+    testimonialsTitle: "What Our Volunteers Say",
+    testimonial1:
+      "Volunteering with API changed my perspective and gave me purpose.",
+    testimonial2: "The team is inspiring, and the work is truly impactful.",
+    testimonial3: "I found a community that cares deeply about peace.",
+    mapTitle: "Where We Work",
+    statsTitle: "Our Impact",
+    volunteers: "Volunteers",
+    hoursServed: "Hours Served",
+    communitiesReached: "Communities Reached",
+    contactUs: "Contact Us",
+    followUs: "Follow Us",
+    stayUpdated: "Stay Updated",
+    newsletterSubtitle: "Subscribe to our newsletter for the latest news.",
+    submit: "Submit",
+    subscribe: "Subscribe",
+    ctaBanner: "Ready to make a difference? Volunteer today!",
+    ctaButton: "Get Started",
+    badge: "Form Complete! 🎉",
+    skipToMain: "Skip to main content",
+    nav: {
+      whoWeAre: "Who We Are",
+      ourApproach: "Our Approach",
+      getInvolved: "Get Involved",
+      newsPress: "News & Press",
+    },
+    formLabels: {
+      fullName: "Full Name:",
+      email: "Email Address:",
+      phone: "Phone Number:",
+      address: "Address:",
+      availability: "Availability:",
+      skills: "Skills and Experience:",
+      interests: "Areas of Interest:",
+      additionalInfo: "Additional Information:",
+      communityOutreach: "Community Outreach",
+      fundraising: "Fundraising",
+      eventPlanning: "Event Planning",
+      adminSupport: "Administrative Support",
+      translation: "Translation",
+      techSupport: "Tech Support",
+      selectAvailability: "Select Availability",
+      weekdays: "Weekdays",
+      weekends: "Weekends",
+      evenings: "Evenings",
+      flexible: "Flexible",
+    },
+    errors: {
+      fullName: "Full Name is required",
+      email: "Email Address is invalid",
+      phone: "Phone Number is invalid",
+      availability: "Availability is required",
+    },
+    footer: {
+      privacyPolicy: "Privacy Policy",
+      termsOfService: "Terms of Service",
+    },
+  },
+  fr: {
+    title: "Bénévole - Initiative de Paix en Afrique",
+    heroHeadline: "Rejoignez notre équipe de bénévoles",
+    heroSubheadline:
+      "Faites une différence en offrant votre temps et vos compétences pour soutenir nos initiatives.",
+    formTitle: "Formulaire d'information pour les bénévoles",
+    formSubtitle:
+      "Veuillez remplir le formulaire ci-dessous pour exprimer votre intérêt à faire du bénévolat avec nous.",
+    testimonialsTitle: "Ce que disent nos bénévoles",
+    testimonial1:
+      "Le bénévolat avec API a changé ma perspective et m'a donné un but.",
+    testimonial2:
+      "L'équipe est inspirante et le travail est vraiment impactant.",
+    testimonial3:
+      "J'ai trouvé une communauté qui se soucie profondément de la paix.",
+    mapTitle: "Où nous travaillons",
+    statsTitle: "Notre impact",
+    volunteers: "Bénévoles",
+    hoursServed: "Heures de service",
+    communitiesReached: "Communautés atteintes",
+    contactUs: "Nous contacter",
+    followUs: "Suivez-nous",
+    stayUpdated: "Restez informé",
+    newsletterSubtitle:
+      "Abonnez-vous à notre newsletter pour les dernières nouvelles.",
+    submit: "Soumettre",
+    subscribe: "S'abonner",
+    ctaBanner: "Prêt à faire une différence ? Devenez bénévole aujourd'hui !",
+    ctaButton: "Commencer",
+    badge: "Formulaire complété ! 🎉",
+    skipToMain: "Passer au contenu principal",
+    nav: {
+      whoWeAre: "Qui nous sommes",
+      ourApproach: "Notre approche",
+      getInvolved: "Participer",
+      newsPress: "Actualités & Presse",
+    },
+    formLabels: {
+      fullName: "Nom complet :",
+      email: "Adresse e-mail :",
+      phone: "Numéro de téléphone :",
+      address: "Adresse :",
+      availability: "Disponibilité :",
+      skills: "Compétences et expérience :",
+      interests: "Domaines d'intérêt :",
+      additionalInfo: "Informations supplémentaires :",
+      communityOutreach: "Sensibilisation communautaire",
+      fundraising: "Collecte de fonds",
+      eventPlanning: "Organisation d'événements",
+      adminSupport: "Soutien administratif",
+      translation: "Traduction",
+      techSupport: "Support technique",
+      selectAvailability: "Sélectionnez la disponibilité",
+      weekdays: "Jours de semaine",
+      weekends: "Week-ends",
+      evenings: "Soirées",
+      flexible: "Flexible",
+    },
+    errors: {
+      fullName: "Nom complet requis",
+      email: "Adresse e-mail non valide",
+      phone: "Numéro de téléphone non valide",
+      availability: "Disponibilité requise",
+    },
+    footer: {
+      privacyPolicy: "Politique de confidentialité",
+      termsOfService: "Conditions d'utilisation",
+    },
+  },
+  sw: {
+    title: "Jitolee - Africa Peace Initiative",
+    heroHeadline: "Jiunge na Timu Yetu ya Wajitolea",
+    heroSubheadline:
+      "Fanya mabadiliko kwa kujitolea wakati wako na ujuzi wako kusaidia mipango yetu.",
+    formTitle: "Fomu ya Taarifa za Wajitolea",
+    formSubtitle:
+      "Tafadhali jaza fomu hapa chini ili kuonyesha nia yako ya kujitolea nasi.",
+    testimonialsTitle: "Wajitolea Wanachosema",
+    testimonial1:
+      "Kujitolea na API kulibadilisha mtazamo wangu na kunipa kusudi.",
+    testimonial2: "Timu ni ya kumudu na kazi ina athari za kweli.",
+    testimonial3: "Nilipata jamii inayojali sana amani.",
+    mapTitle: "Tunapofanya Kazi",
+    statsTitle: "Athari Zetu",
+    volunteers: "Wajitolea",
+    hoursServed: "Masaa ya Huduma",
+    communitiesReached: "Jamii Zilizofikiwa",
+    contactUs: "Wasiliana Nasi",
+    followUs: "Tufuate",
+    stayUpdated: "Endelea Kusasishwa",
+    newsletterSubtitle:
+      "Jiandikishe kwenye jarida letu la habari kwa habari za hivi punde.",
+    submit: "Wasilisha",
+    subscribe: "Jiandikishe",
+    ctaBanner: "Tayari kuleta mabadiliko? Jitolee leo!",
+    ctaButton: "Anza",
+    badge: "Fomu Imekamilika! 🎉",
+    skipToMain: "Rukia kwa yaliyomo ya msingi",
+    nav: {
+      whoWeAre: "Sisi Ni Nani",
+      ourApproach: "Mtazamo Wetu",
+      getInvolved: "Jihusishe",
+      newsPress: "Habari & Vyombo vya Habari",
+    },
+    formLabels: {
+      fullName: "Jina Kamili:",
+      email: "Anwani ya Barua Pepe:",
+      phone: "Namba ya Simu:",
+      address: "Anwani:",
+      availability: "Upatikanaji:",
+      skills: "Ujuzi na Uzoefu:",
+      interests: "Maeneo ya Kuvutia:",
+      additionalInfo: "Taarifa za Ziada:",
+      communityOutreach: "Uhamasishaji wa Jamii",
+      fundraising: "Kuchangisha Fedha",
+      eventPlanning: "Kupanga Matukio",
+      adminSupport: "Usaidizi wa Utawala",
+      translation: "Tafsiri",
+      techSupport: "Usaidizi wa Teknolojia",
+      selectAvailability: "Chagua Upatikanaji",
+      weekdays: "Siku za Wiki",
+      weekends: "Mwisho wa Wiki",
+      evenings: "Jioni",
+      flexible: "Rahisi Kubadilika",
+    },
+    errors: {
+      fullName: "Jina kamili linahitajika",
+      email: "Barua pepe si halali",
+      phone: "Namba ya simu si halali",
+      availability: "Upatikanaji unahitajika",
+    },
+    footer: {
+      privacyPolicy: "Sera ya Faragha",
+      termsOfService: "Masharti ya Huduma",
+    },
+  },
+};
+
+// Get language from query params or default to English
+const lang = Astro.url.searchParams.get("lang") || "en";
+const t = translations[lang] || translations.en;
 ---
 
-<Layout title="Volunteer - Africa Peace Initiative">
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<Layout title={t.title}>
+  <!-- SEO Meta Tags and Structured Data -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:title" content={t.title} />
+  <meta property="og:description" content={t.heroSubheadline} />
+  <meta
+    property="og:image"
+    content="https://africapeaceinitiative.org/images/hero.jpg"
+  />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Africa Peace Initiative",
+      "url": "https://africapeaceinitiative.org",
+      "description": "Join us to volunteer and make a difference.",
+      "sameAs": ["https://facebook.com/api", "https://twitter.com/api"]
+    }
+  </script>
+
+  <a href="#main-content" class="skip-link">{t.skipToMain}</a>
 
   <header>
     <nav class="container navbar">
@@ -27,13 +256,21 @@ import Layout from "../layouts/Layout.astro";
         <i class="fas fa-bars"></i>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="/">Who We Are</a></li>
-        <li><a href="/">Our Approach</a></li>
-        <li><a href="/">Get Involved</a></li>
-        <li><a href="/">News & Press</a></li>
+        <li><a href="/">{t.nav.whoWeAre}</a></li>
+        <li><a href="/">{t.nav.ourApproach}</a></li>
+        <li><a href="/">{t.nav.getInvolved}</a></li>
+        <li><a href="/">{t.nav.newsPress}</a></li>
       </ul>
+      <select class="language-switcher" onchange="changeLanguage(this.value)">
+        <option value="en" selected={lang === "en"}>English</option>
+        <option value="fr" selected={lang === "fr"}>Français</option>
+        <option value="sw" selected={lang === "sw"}>Kiswahili</option>
+      </select>
       <button class="theme-toggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
+      </button>
+      <button class="contrast-toggle" aria-label="Toggle high contrast mode">
+        <i class="fas fa-adjust"></i>
       </button>
     </nav>
   </header>
@@ -50,22 +287,16 @@ import Layout from "../layouts/Layout.astro";
       />
     </picture>
     <div class="hero-content container">
-      <h1 class="hero-headline">Join Our Team of Volunteers</h1>
-      <p class="hero-subheadline">
-        Make a difference by volunteering your time and skills to support our
-        initiatives.
-      </p>
+      <h1 class="hero-headline">{t.heroHeadline}</h1>
+      <p class="hero-subheadline">{t.heroSubheadline}</p>
     </div>
   </section>
 
   <main id="main-content">
     <section class="volunteer-section">
       <div class="container">
-        <h2>Volunteer Information Form</h2>
-        <p>
-          Please fill out the form below to express your interest in
-          volunteering with us.
-        </p>
+        <h2>{t.formTitle}</h2>
+        <p>{t.formSubtitle}</p>
         <div class="progress-bar">
           <div class="progress-fill"></div>
         </div>
@@ -75,72 +306,71 @@ import Layout from "../layouts/Layout.astro";
           method="POST"
           novalidate
         >
-          <div class="form-group" data-error="Please enter your full name">
-            <label for="name">Full Name:</label>
+          <div class="form-group" data-error={t.errors.fullName}>
+            <label for="name">{t.formLabels.fullName}</label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Your Full Name"
+              placeholder={t.formLabels.fullName}
               required
               aria-required="true"
             />
           </div>
-          <div class="form-group" data-error="Please enter a valid email">
-            <label for="email">Email Address:</label>
+          <div class="form-group" data-error={t.errors.email}>
+            <label for="email">{t.formLabels.email}</label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder="Your Email Address"
+              placeholder={t.formLabels.email}
               required
               aria-required="true"
             />
           </div>
-          <div
-            class="form-group"
-            data-error="Please enter a valid phone number"
-          >
-            <label for="phone">Phone Number:</label>
+          <div class="form-group" data-error={t.errors.phone}>
+            <label for="phone">{t.formLabels.phone}</label>
             <input
               type="tel"
               id="phone"
               name="phone"
-              placeholder="Your Phone Number"
+              placeholder={t.formLabels.phone}
               pattern="[0-9]{10,}"
             />
           </div>
           <div class="form-group">
-            <label for="address">Address:</label>
+            <label for="address">{t.formLabels.address}</label>
             <input
               type="text"
               id="address"
               name="address"
-              placeholder="Your Address"
+              placeholder={t.formLabels.address}
             />
           </div>
-          <div class="form-group" data-error="Please select your availability">
-            <label for="availability">Availability:</label>
+          <div class="form-group" data-error={t.errors.availability}>
+            <label for="availability">{t.formLabels.availability}</label>
             <select
               id="availability"
               name="availability"
               required
               aria-required="true"
             >
-              <option value="" disabled selected>Select Availability</option>
-              <option value="weekdays">Weekdays</option>
-              <option value="weekends">Weekends</option>
-              <option value="evenings">Evenings</option>
-              <option value="flexible">Flexible</option>
+              <option value="" disabled selected
+                >{t.formLabels.selectAvailability}</option
+              >
+              <option value="weekdays">{t.formLabels.weekdays}</option>
+              <option value="weekends">{t.formLabels.weekends}</option>
+              <option value="evenings">{t.formLabels.evenings}</option>
+              <option value="flexible">{t.formLabels.flexible}</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="skills">Skills and Experience:</label>
+            <label for="skills">{t.formLabels.skills}</label>
             <textarea
               id="skills"
               name="skills"
               rows="4"
-              placeholder="Describe your skills and experience"
+              placeholder={t.formLabels.skills}
               aria-describedby="skills-hint"></textarea>
             <small id="skills-hint" class="form-hint"
               >E.g., project management, teaching, etc.</small
@@ -148,7 +378,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="form-group">
             <fieldset>
-              <legend>Areas of Interest:</legend>
+              <legend>{t.formLabels.interests}</legend>
               <div class="checkbox-group">
                 <label class="checkbox-label">
                   <input
@@ -156,11 +386,11 @@ import Layout from "../layouts/Layout.astro";
                     name="interests"
                     value="community-outreach"
                   />
-                  Community Outreach
+                  {t.formLabels.communityOutreach}
                 </label>
                 <label class="checkbox-label">
                   <input type="checkbox" name="interests" value="fundraising" />
-                  Fundraising
+                  {t.formLabels.fundraising}
                 </label>
                 <label class="checkbox-label">
                   <input
@@ -168,7 +398,7 @@ import Layout from "../layouts/Layout.astro";
                     name="interests"
                     value="event-planning"
                   />
-                  Event Planning
+                  {t.formLabels.eventPlanning}
                 </label>
                 <label class="checkbox-label">
                   <input
@@ -176,11 +406,11 @@ import Layout from "../layouts/Layout.astro";
                     name="interests"
                     value="administrative-support"
                   />
-                  Administrative Support
+                  {t.formLabels.adminSupport}
                 </label>
                 <label class="checkbox-label">
                   <input type="checkbox" name="interests" value="translation" />
-                  Translation
+                  {t.formLabels.translation}
                 </label>
                 <label class="checkbox-label">
                   <input
@@ -188,24 +418,23 @@ import Layout from "../layouts/Layout.astro";
                     name="interests"
                     value="tech-support"
                   />
-                  Tech Support
+                  {t.formLabels.techSupport}
                 </label>
               </div>
             </fieldset>
           </div>
           <div class="form-group">
-            <label for="additional-info">Additional Information:</label>
+            <label for="additional-info">{t.formLabels.additionalInfo}</label>
             <textarea
               id="additional-info"
               name="additional-info"
               rows="4"
-              placeholder="Any additional information you'd like to share"
-            ></textarea>
+              placeholder={t.formLabels.additionalInfo}></textarea>
           </div>
           <button
             type="submit"
             class="cta-button primary-button"
-            aria-label="Submit volunteer form">Submit</button
+            aria-label="Submit volunteer form">{t.submit}</button
           >
         </form>
       </div>
@@ -213,21 +442,18 @@ import Layout from "../layouts/Layout.astro";
 
     <section class="testimonials-section">
       <div class="container">
-        <h2>What Our Volunteers Say</h2>
+        <h2>{t.testimonialsTitle}</h2>
         <div class="testimonials-grid">
           <div class="testimonial-card">
-            <p>
-              "Volunteering with API changed my perspective and gave me
-              purpose."
-            </p>
+            <p>"{t.testimonial1}"</p>
             <span>- Jane D., Community Outreach Volunteer</span>
           </div>
           <div class="testimonial-card">
-            <p>"The team is inspiring, and the work is truly impactful."</p>
+            <p>"{t.testimonial2}"</p>
             <span>- Ahmed K., Tech Support Volunteer</span>
           </div>
           <div class="testimonial-card">
-            <p>"I found a community that cares deeply about peace."</p>
+            <p>"{t.testimonial3}"</p>
             <span>- Sarah M., Event Planner</span>
           </div>
         </div>
@@ -236,26 +462,26 @@ import Layout from "../layouts/Layout.astro";
 
     <section class="map-section">
       <div class="container">
-        <h2>Where We Work</h2>
+        <h2>{t.mapTitle}</h2>
         <div id="map" style="height: 400px;"></div>
       </div>
     </section>
 
     <section class="stats-section">
       <div class="container">
-        <h2>Our Impact</h2>
+        <h2 class="stats-title">{t.statsTitle}</h2>
         <div class="stats-grid">
-          <div class="stat">
-            <span class="stat-number" data-target="500">0</span>
-            <p>Volunteers</p>
-          </div>
-          <div class="stat">
-            <span class="stat-number" data-target="10000">0</span>
-            <p>Hours Served</p>
-          </div>
-          <div class="stat">
+          <div class="stat-card">
             <span class="stat-number" data-target="20">0</span>
-            <p>Communities Reached</p>
+            <p class="stat-label">{t.volunteers}</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="1000">0</span>
+            <p class="stat-label">{t.hoursServed}</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="10">0</span>
+            <p class="stat-label">{t.communitiesReached}</p>
           </div>
         </div>
       </div>
@@ -265,7 +491,7 @@ import Layout from "../layouts/Layout.astro";
   <footer>
     <div class="container footer-content">
       <div class="footer-col">
-        <h3>Contact Us</h3>
+        <h3>{t.contactUs}</h3>
         <ul class="contact-info">
           <li>
             <i class="fas fa-envelope"></i>
@@ -282,58 +508,68 @@ import Layout from "../layouts/Layout.astro";
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Follow Us</h3>
+        <h3>{t.followUs}</h3>
         <ul class="social-links">
           <li>
-            <a href="#" aria-label="Facebook"
-              ><i class="fas fa-facebook"></i> Facebook</a>
+            <a href="https://facebook.com/api" aria-label="Facebook"
+              ><i class="fab fa-facebook"></i> Facebook</a>
           </li>
           <li>
-            <a href="#" aria-label="Twitter"
-              ><i class="fas fa-twitter"></i> Twitter</a>
+            <a href="https://twitter.com/api" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i> Twitter</a>
           </li>
           <li>
             <a href="#" aria-label="Instagram"
-              ><i class="fas fa-instagram"></i> Instagram</a>
+              ><i class="fab fa-instagram"></i> Instagram</a>
           </li>
           <li>
             <a href="#" aria-label="LinkedIn"
-              ><i class="fas fa-linkedin"></i> LinkedIn</a>
+              ><i class="fab fa-linkedin"></i> LinkedIn</a>
           </li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Stay Updated</h3>
-        <p>Subscribe to our newsletter for the latest news.</p>
+        <h3>{t.stayUpdated}</h3>
+        <p>{t.newsletterSubtitle}</p>
         <form class="newsletter-form" action="/subscribe" method="POST">
           <input
             type="email"
             class="newsletter-input"
-            placeholder="Your Email Address"
+            placeholder={t.formLabels.email}
             required
             aria-label="Newsletter email"
           />
           <button type="submit" class="cta-button primary-button"
-            >Subscribe</button
+            >{t.subscribe}</button
           >
         </form>
       </div>
     </div>
     <div class="footer-bottom container">
-      <p style="color: white;">
+      <p>
         © {new Date().getFullYear()} Africa Peace Initiative. All rights reserved.
         |
-        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        <a href="#">{t.footer.privacyPolicy}</a> |
+        <a href="#">{t.footer.termsOfService}</a>
       </p>
     </div>
   </footer>
 
   <div class="cta-banner">
-    <p>Ready to make a difference? Volunteer today!</p>
-    <a href="#main-content" class="cta-button">Get Started</a>
+    <p>{t.ctaBanner}</p>
+    <a href="#main-content" class="cta-button">{t.ctaButton}</a>
   </div>
 
+  <div class="badge" style="display: none;">{t.badge}</div>
+
   <script>
+    // Language switcher
+    function changeLanguage(selectedLang) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", selectedLang);
+      window.location.href = url.toString();
+    }
+
     // Hamburger menu toggle
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
@@ -354,6 +590,19 @@ import Layout from "../layouts/Layout.astro";
     if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark-mode");
       toggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    // High contrast toggle
+    const contrastToggle = document.querySelector(".contrast-toggle");
+    contrastToggle.addEventListener("click", () => {
+      document.body.classList.toggle("high-contrast");
+      localStorage.setItem(
+        "contrast",
+        document.body.classList.contains("high-contrast") ? "high" : "normal"
+      );
+    });
+    if (localStorage.getItem("contrast") === "high") {
+      document.body.classList.add("high-contrast");
     }
 
     // Form submission handling
@@ -377,9 +626,10 @@ import Layout from "../layouts/Layout.astro";
       }
     });
 
-    // Form progress bar
+    // Form progress bar and gamification
     const progressFill = document.querySelector(".progress-fill");
     const inputs = form.querySelectorAll("input, textarea, select");
+    const badge = document.querySelector(".badge");
     function updateProgress() {
       const filled = Array.from(inputs).filter(
         (input) => input.value.trim() || input.checked
@@ -387,6 +637,11 @@ import Layout from "../layouts/Layout.astro";
       const total = inputs.length;
       const percentage = (filled / total) * 100;
       progressFill.style.width = `${percentage}%`;
+      if (filled === total) {
+        badge.style.display = "block";
+      } else {
+        badge.style.display = "none";
+      }
     }
     inputs.forEach((input) => input.addEventListener("input", updateProgress));
 
@@ -493,8 +748,10 @@ import Layout from "../layouts/Layout.astro";
           text-decoration: none;
           font-weight: 500;
           transition: color 0.3s ease;
-          &:hover {
+          &:hover,
+          &:focus {
             color: var(--primary-color);
+            outline: none;
           }
         }
       }
@@ -504,14 +761,30 @@ import Layout from "../layouts/Layout.astro";
         border: none;
         font-size: 1.5rem;
         cursor: pointer;
+        &:focus {
+          outline: 2px solid var(--primary-color);
+        }
       }
-      .theme-toggle {
+      .language-switcher {
+        padding: 5px;
+        border-radius: 5px;
+        background: #fff;
+        border: 1px solid var(--neutral-light);
+        &:focus {
+          outline: 2px solid var(--primary-color);
+        }
+      }
+      .theme-toggle,
+      .contrast-toggle {
         background: none;
         border: none;
         font-size: 1.5rem;
         cursor: pointer;
         padding: 0.5rem;
         color: var(--neutral-dark);
+        &:focus {
+          outline: 2px solid var(--primary-color);
+        }
       }
       @media (max-width: 768px) {
         .hamburger {
@@ -650,6 +923,7 @@ import Layout from "../layouts/Layout.astro";
             &:focus {
               border-color: var(--primary-color);
               box-shadow: 0 0 5px rgba(46, 139, 87, 0.3);
+              outline: none;
             }
             &.valid {
               border-color: var(--primary-color);
@@ -675,6 +949,9 @@ import Layout from "../layouts/Layout.astro";
               input[type="checkbox"] {
                 margin-right: 10px;
                 accent-color: var(--primary-color);
+                &:focus {
+                  outline: 2px solid var(--primary-color);
+                }
               }
             }
           }
@@ -707,6 +984,9 @@ import Layout from "../layouts/Layout.astro";
             background: var(--primary-darker);
             transform: translateY(-2px);
           }
+          &:focus {
+            outline: 2px solid var(--primary-color);
+          }
           @media (min-width: 768px) {
             grid-column: 1 / -1;
             justify-self: center;
@@ -734,7 +1014,8 @@ import Layout from "../layouts/Layout.astro";
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
-        &:hover {
+        &:hover,
+        &:focus-within {
           transform: translateY(-5px);
         }
         p {
@@ -762,23 +1043,71 @@ import Layout from "../layouts/Layout.astro";
     .stats-section {
       padding: 60px 0;
       background: var(--primary-color);
-      color: white;
-      h2 {
+      color: var(--secondary-color);
+      position: relative;
+      overflow: hidden;
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
         text-align: center;
-        margin-bottom: 40px;
       }
+
+      .stats-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 40px;
+        color: var(--secondary-color);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
       .stats-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
-        text-align: center;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        padding: 20px 0;
+        justify-items: center;
       }
-      .stat-number {
-        font-size: 2.5rem;
-        font-weight: bold;
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        &:hover,
+        &:focus-within {
+          transform: translateY(-10px);
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-number {
+          font-size: clamp(2rem, 8vw, 3.5rem);
+          font-weight: bold;
+          color: var(--secondary-color);
+          display: block;
+          margin-bottom: 10px;
+          animation: fadeInUp 0.5s ease-out;
+        }
+
+        .stat-label {
+          font-size: clamp(1rem, 3vw, 1.2rem);
+          color: rgba(255, 255, 255, 0.8);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 500;
+        }
       }
-      p {
-        font-size: 1.2rem;
+
+      .dark-mode & {
+        background: #2a2a2a;
+        .stat-card {
+          background: rgba(255, 255, 255, 0.05);
+        }
       }
     }
 
@@ -789,38 +1118,54 @@ import Layout from "../layouts/Layout.astro";
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 2rem;
-        padding-bottom: 20px;
+        padding-bottom: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
       }
       .footer-col {
         h3 {
           color: var(--secondary-color);
           margin-bottom: 15px;
+          font-size: 1.5rem;
+          font-weight: 600;
         }
         ul {
           list-style: none;
           li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             a {
               color: var(--off-white);
               text-decoration: none;
+              font-size: 1rem;
+              display: flex;
+              align-items: center;
               transition: color 0.3s ease;
-              &:hover {
+              &:hover,
+              &:focus {
                 color: var(--primary-color);
+                outline: none;
               }
             }
             i {
-              margin-right: 8px;
+              margin-right: 10px;
+              color: var(--primary-color);
+              font-size: 1.2rem;
             }
           }
         }
         .newsletter-form {
           display: flex;
           gap: 10px;
+          flex-wrap: wrap;
           .newsletter-input {
             padding: 10px;
             flex: 1;
             border: none;
             border-radius: 5px;
+            font-size: 1rem;
+            &:focus {
+              outline: 2px solid var(--primary-color);
+            }
           }
           .cta-button {
             padding: 10px 20px;
@@ -829,8 +1174,13 @@ import Layout from "../layouts/Layout.astro";
             background: var(--primary-color);
             color: white;
             cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
             &:hover {
               background: var(--primary-darker);
+            }
+            &:focus {
+              outline: 2px solid var(--primary-color);
             }
           }
         }
@@ -839,12 +1189,51 @@ import Layout from "../layouts/Layout.astro";
         border-top: 1px solid var(--neutral-light);
         padding-top: 20px;
         text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        p {
+          color: var(--off-white);
+          font-size: 0.9rem;
+          margin: 0;
+          line-height: 1.5;
+        }
         a {
           color: var(--off-white);
-          margin: 0 5px;
-          &:hover {
+          margin: 0 8px;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          &:hover,
+          &:focus {
             color: var(--primary-color);
+            outline: none;
           }
+        }
+      }
+      @media (max-width: 768px) {
+        .footer-content {
+          gap: 1.5rem;
+          padding-bottom: 20px;
+        }
+        .footer-col {
+          h3 {
+            font-size: 1.3rem;
+          }
+          ul li a {
+            font-size: 0.9rem;
+          }
+          .newsletter-form {
+            flex-direction: column;
+            .newsletter-input {
+              width: 100%;
+            }
+            .cta-button {
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+        .footer-bottom p {
+          font-size: 0.85rem;
         }
       }
     }
@@ -869,9 +1258,11 @@ import Layout from "../layouts/Layout.astro";
         padding: 8px 16px;
         text-decoration: none;
         border-radius: 5px;
-        &:hover {
+        &:hover,
+        &:focus {
           background: var(--primary-darker);
           color: white;
+          outline: none;
         }
       }
       @media (max-width: 768px) {
@@ -880,6 +1271,19 @@ import Layout from "../layouts/Layout.astro";
         padding: 10px 15px;
         font-size: 0.9rem;
       }
+    }
+
+    .badge {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--primary-color);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      animation: fadeIn 0.5s ease;
     }
 
     .dark-mode {
@@ -908,6 +1312,60 @@ import Layout from "../layouts/Layout.astro";
       .stats-section {
         background: #2a2a2a;
       }
+      footer {
+        .footer-col h3 {
+          color: var(--dark-text);
+        }
+        .footer-col ul li a {
+          color: var(--dark-text);
+        }
+        .footer-bottom p,
+        .footer-bottom a {
+          color: var(--dark-text);
+        }
+      }
+    }
+
+    .high-contrast {
+      filter: contrast(150%) grayscale(20%);
+      background: #000;
+      color: #fff;
+      .navbar,
+      .volunteer-section,
+      footer,
+      .testimonials-section {
+        background: #000;
+      }
+      .volunteer-form,
+      .testimonial-card {
+        background: #111;
+        color: #fff;
+      }
+      .cta-button {
+        background: #fff;
+        color: #000;
+        &:hover {
+          background: #ddd;
+        }
+      }
+      .stats-section {
+        background: #222;
+      }
+      .progress-fill {
+        background: #fff;
+      }
+      footer {
+        .footer-col h3 {
+          color: #fff;
+        }
+        .footer-col ul li a {
+          color: #fff;
+        }
+        .footer-bottom p,
+        .footer-bottom a {
+          color: #fff;
+        }
+      }
     }
 
     @keyframes fadeIn {
@@ -926,6 +1384,16 @@ import Layout from "../layouts/Layout.astro";
       }
       to {
         transform: translateX(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
