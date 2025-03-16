@@ -5,14 +5,13 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Africa Peace Initiative">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header>
+  <header class="header">
     <nav class="container navbar">
       <div class="logo">
         <a href="/">
           <img
             src="https://ik.imagekit.io/5zp8ovb7c/Africa%20Peace%20Initiative/API%20logo-12.png?updatedAt=1741074058148"
             alt="Africa Peace Initiative Logo"
-            style="height: 60px;"
             loading="eager"
             decoding="async"
           />
@@ -24,16 +23,36 @@ import Layout from "../layouts/Layout.astro";
         aria-expanded="false"
         aria-controls="nav-links"
       >
-        <i class="fas fa-bars"></i>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">Who We Are</a></li>
         <li><a href="#programs">Our Approach</a></li>
         <li><a href="#get-involved">Get Involved</a></li>
-        <li><a href="#contact">News & Press</a></li>
       </ul>
     </nav>
+    <div class="accent-line"></div>
   </header>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      if (!hamburger || !navLinks) {
+        console.error("Error: Hamburger or navLinks element not found!");
+        return;
+      }
+
+      hamburger.addEventListener("click", () => {
+        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", !isExpanded);
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
 
   <section id="main-content" class="hero-banner">
     <!-- Background Layer -->
@@ -64,7 +83,7 @@ import Layout from "../layouts/Layout.astro";
               class="cta-button primary-button"
               aria-label="Learn more about our initiatives"
             >
-            Learn More 
+              Learn More
             </a>
             <a
               href="/donate"
@@ -370,7 +389,7 @@ import Layout from "../layouts/Layout.astro";
 
       hamburger.addEventListener("click", () => {
         const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
-        hamburger.setAttribute("aria-expanded", !isExpanded);
+        hamburger.setAttribute("aria-expanded", String(!isExpanded));
         navLinks.classList.toggle("active");
       });
     });
@@ -507,89 +526,175 @@ import Layout from "../layouts/Layout.astro";
       }
     }
 
-    /* Header */
-    header {
-      background-color: var(--secondary-color);
-      padding: 25px 0;
-      box-shadow: 0 4px 12px var(--shadow-color);
+    .header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      @media (max-width: 768px) {
-        padding: 15px 0;
-      }
+      z-index: 1000;
+      background: #fff;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     }
 
-    .navbar {
+    .container.navbar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .nav-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      @media (max-width: 768px) {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-        &.active {
-          display: flex;
-        }
-        li {
-          margin-left: 0;
-          a {
-            padding: 10px 15px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-          }
-        }
-      }
+    .logo img {
+      height: 60px;
+      transition: filter 0.3s ease;
     }
 
-    .nav-links li a {
-      color: var(--dark-green);
-      padding: 14px 20px;
-      border-radius: var(--border-radius);
-      transition: all 0.3s ease;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    .nav-links li a:hover {
-      background-color: var(--primary-color);
-      color: var(--secondary-color);
+    .logo img:hover {
+      filter: drop-shadow(
+        0 0 8px rgba(39, 174, 96, 0.5)
+      ); /* Subtle green glow */
     }
 
     .hamburger {
       display: none;
       background: none;
       border: none;
-      padding: 15px;
+      padding: 0.5rem;
       cursor: pointer;
-      @media (max-width: 768px) {
+      width: 40px;
+      height: 40px;
+      position: relative;
+    }
+
+    .hamburger .bar {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: #1a3c5e; /* Darker blue for contrast */
+      margin: 6px 0;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger[aria-expanded="true"] .bar:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger[aria-expanded="true"] .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger[aria-expanded="true"] .bar:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin: 0 1.5rem;
+    }
+
+    .nav-links a {
+      color: #1a3c5e; /* Darker blue for better contrast */
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+      font-family: "Arial", sans-serif; /* Replace with NGO’s font */
+      padding: 0.5rem 1.2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      letter-spacing: 0.02em;
+      border-radius: 25px; /* Capsule shape */
+    }
+
+    .nav-links a:hover {
+      color: #27ae60;
+      background: rgba(39, 174, 96, 0.1); /* Light green bg on hover */
+      transform: translateY(-2px);
+    }
+
+    .accent-line {
+      height: 4px;
+      background: linear-gradient(
+        90deg,
+        #0057b7,
+        #27ae60
+      ); /* Blue-to-green gradient */
+      width: 100%;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .hamburger {
         display: block;
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        padding: 10px;
+      }
+
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+        z-index: 999;
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+      }
+
+      .nav-links li {
+        margin: 2.5rem 0;
+      }
+
+      .nav-links a {
+        font-size: 1.8rem;
+        color: #1a3c5e;
+        padding: 1rem 2rem;
+        background: none; /* No hover bg on mobile */
+      }
+
+      .accent-line {
+        display: none; /* Hide accent line on mobile */
       }
     }
 
-    .hamburger i {
-      font-size: 28px;
-      color: var(--dark-green);
-      transition: color 0.3s ease;
-    }
+    @media (max-width: 480px) {
+      .logo img {
+        height: 50px;
+      }
 
-    .hamburger:hover i {
-      color: var(--primary-color);
+      .hamburger {
+        width: 35px;
+        height: 35px;
+      }
+
+      .hamburger .bar {
+        width: 25px;
+        height: 2px;
+        margin: 5px 0;
+      }
+
+      .nav-links a {
+        font-size: 1.6rem;
+      }
+
+      .container.navbar {
+        padding: 1rem 1.5rem;
+      }
     }
 
     .hero-banner {
