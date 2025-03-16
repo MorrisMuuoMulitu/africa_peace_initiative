@@ -234,14 +234,13 @@ const t = translations[lang] || translations.en;
 
   <a href="#main-content" class="skip-link">{t.skipToMain}</a>
 
-  <header>
+  <header class="header">
     <nav class="container navbar">
       <div class="logo">
         <a href="/">
           <img
             src="https://ik.imagekit.io/5zp8ovb7c/Africa%20Peace%20Initiative/API%20logo-12.png?updatedAt=1741074058148"
             alt="Africa Peace Initiative Logo"
-            style="height: 60px;"
             loading="eager"
             decoding="async"
           />
@@ -253,27 +252,36 @@ const t = translations[lang] || translations.en;
         aria-expanded="false"
         aria-controls="nav-links"
       >
-        <i class="fas fa-bars"></i>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="/">{t.nav.whoWeAre}</a></li>
-        <li><a href="/">{t.nav.ourApproach}</a></li>
-        <li><a href="/">{t.nav.getInvolved}</a></li>
-        <li><a href="/">{t.nav.newsPress}</a></li>
+        <li><a href="#about">Who We Are</a></li>
+        <li><a href="#programs">Our Approach</a></li>
+        <li><a href="#get-involved">Get Involved</a></li>
       </ul>
-      <select class="language-switcher" onchange="changeLanguage(this.value)">
-        <option value="en" selected={lang === "en"}>English</option>
-        <option value="fr" selected={lang === "fr"}>Français</option>
-        <option value="sw" selected={lang === "sw"}>Kiswahili</option>
-      </select>
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-      </button>
-      <button class="contrast-toggle" aria-label="Toggle high contrast mode">
-        <i class="fas fa-adjust"></i>
-      </button>
     </nav>
+    <div class="accent-line"></div>
   </header>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      if (!hamburger || !navLinks) {
+        console.error("Error: Hamburger or navLinks element not found!");
+        return;
+      }
+
+      hamburger.addEventListener("click", () => {
+        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", !isExpanded);
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
 
   <section class="hero-banner">
     <picture>
@@ -496,7 +504,8 @@ const t = translations[lang] || translations.en;
           <li>
             <i class="fas fa-envelope"></i>
             <a href="mailto:info@africapeaceinitiative.org"
-              >info@africapeaceinitiative.org</a>
+              >info@africapeaceinitiative.org</a
+            >
           </li>
           <li>
             <i class="fas fa-phone"></i>
@@ -512,19 +521,23 @@ const t = translations[lang] || translations.en;
         <ul class="social-links">
           <li>
             <a href="https://facebook.com/api" aria-label="Facebook"
-              ><i class="fab fa-facebook"></i> Facebook</a>
+              ><i class="fab fa-facebook"></i> Facebook</a
+            >
           </li>
           <li>
             <a href="https://twitter.com/api" aria-label="Twitter"
-              ><i class="fab fa-twitter"></i> Twitter</a>
+              ><i class="fab fa-twitter"></i> Twitter</a
+            >
           </li>
           <li>
             <a href="#" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i> Instagram</a>
+              ><i class="fab fa-instagram"></i> Instagram</a
+            >
           </li>
           <li>
             <a href="#" aria-label="LinkedIn"
-              ><i class="fab fa-linkedin"></i> LinkedIn</a>
+              ><i class="fab fa-linkedin"></i> LinkedIn</a
+            >
           </li>
         </ul>
       </div>
@@ -712,6 +725,177 @@ const t = translations[lang] || translations.en;
       --neutral-light: #ccc;
       --dark-bg: #1a1a1a;
       --dark-text: #e0e0e0;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #fff;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .container.navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo img {
+      height: 60px;
+      transition: filter 0.3s ease;
+    }
+
+    .logo img:hover {
+      filter: drop-shadow(
+        0 0 8px rgba(39, 174, 96, 0.5)
+      ); /* Subtle green glow */
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      position: relative;
+    }
+
+    .hamburger .bar {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: #1a3c5e; /* Darker blue for contrast */
+      margin: 6px 0;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger[aria-expanded="true"] .bar:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger[aria-expanded="true"] .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger[aria-expanded="true"] .bar:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin: 0 1.5rem;
+    }
+
+    .nav-links a {
+      color: #1a3c5e; /* Darker blue for better contrast */
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+      font-family: "Arial", sans-serif; /* Replace with NGO’s font */
+      padding: 0.5rem 1.2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      letter-spacing: 0.02em;
+      border-radius: 25px; /* Capsule shape */
+    }
+
+    .nav-links a:hover {
+      color: #27ae60;
+      background: rgba(39, 174, 96, 0.1); /* Light green bg on hover */
+      transform: translateY(-2px);
+    }
+
+    .accent-line {
+      height: 4px;
+      background: linear-gradient(
+        90deg,
+        #0057b7,
+        #27ae60
+      ); /* Blue-to-green gradient */
+      width: 100%;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+        z-index: 999;
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+      }
+
+      .nav-links li {
+        margin: 2.5rem 0;
+      }
+
+      .nav-links a {
+        font-size: 1.8rem;
+        color: #1a3c5e;
+        padding: 1rem 2rem;
+        background: none; /* No hover bg on mobile */
+      }
+
+      .accent-line {
+        display: none; /* Hide accent line on mobile */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo img {
+        height: 50px;
+      }
+
+      .hamburger {
+        width: 35px;
+        height: 35px;
+      }
+
+      .hamburger .bar {
+        width: 25px;
+        height: 2px;
+        margin: 5px 0;
+      }
+
+      .nav-links a {
+        font-size: 1.6rem;
+      }
+
+      .container.navbar {
+        padding: 1rem 1.5rem;
+      }
     }
 
     .skip-link {

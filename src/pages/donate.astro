@@ -4,15 +4,15 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Donate - Africa Peace Initiative">
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header>
+  <header class="header">
     <nav class="container navbar">
       <div class="logo">
         <a href="/">
           <img
             src="https://ik.imagekit.io/5zp8ovb7c/Africa%20Peace%20Initiative/API%20logo-12.png?updatedAt=1741074058148"
             alt="Africa Peace Initiative Logo"
-            style="height: 60px;"
             loading="eager"
+            decoding="async"
           />
         </a>
       </div>
@@ -20,24 +20,45 @@ import Layout from "../layouts/Layout.astro";
         class="hamburger"
         aria-label="Toggle navigation"
         aria-expanded="false"
+        aria-controls="nav-links"
       >
-        <i class="fas fa-bars"></i>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </button>
-      <ul class="nav-links">
-        <li><a href="/">Who We Are</a></li>
-        <li><a href="/">Our Approach</a></li>
-        <li><a href="/">Get Involved</a></li>
-        <li><a href="/">News & Press</a></li>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">Who We Are</a></li>
+        <li><a href="#programs">Our Approach</a></li>
+        <li><a href="#get-involved">Get Involved</a></li>
       </ul>
     </nav>
+    <div class="accent-line"></div>
   </header>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      if (!hamburger || !navLinks) {
+        console.error("Error: Hamburger or navLinks element not found!");
+        return;
+      }
+
+      hamburger.addEventListener("click", () => {
+        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", !isExpanded);
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
+
   <section class="hero-banner">
     <div class="hero-content container">
-      <h1 class="hero-headline">
-        Support Our Mission
-      </h1>
+      <h1 class="hero-headline">Support Our Mission</h1>
       <p class="hero-subheadline">
-        Your donation can make a significant impact on peace-building efforts in Africa.
+        Your donation can make a significant impact on peace-building efforts in
+        Africa.
       </p>
     </div>
   </section>
@@ -52,7 +73,11 @@ import Layout from "../layouts/Layout.astro";
         <button class="donation-button">$100</button>
         <button class="donation-button">$250</button>
         <button class="donation-button">$500</button>
-        <input type="number" placeholder="Enter custom amount" class="custom-amount" />
+        <input
+          type="number"
+          placeholder="Enter custom amount"
+          class="custom-amount"
+        />
       </div>
 
       <div class="payment-details">
@@ -72,7 +97,13 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="form-group">
             <label for="expiry">Expiry Date:</label>
-            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required />
+            <input
+              type="text"
+              id="expiry"
+              name="expiry"
+              placeholder="MM/YY"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="cvv">CVV:</label>
@@ -84,60 +115,251 @@ import Layout from "../layouts/Layout.astro";
               Make this a recurring donation
             </label>
           </div>
-          <button type="submit" class="cta-button primary-button">Donate Now</button>
+          <button type="submit" class="cta-button primary-button"
+            >Donate Now</button
+          >
         </form>
       </div>
     </div>
   </section>
-  <footer>
+  <footer id="contact">
     <div class="container footer-content">
       <div class="footer-col">
         <h3>Contact Us</h3>
         <ul class="contact-info">
           <li>
-            <i class="fas fa-envelope"></i> Email: info@africapeaceinitiative.org
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@africapeaceinitiative.org"
+              >info@africapeaceinitiative.org</a
+            >
           </li>
-          <li><i class="fas fa-phone"></i> Phone: +1 (929) 761-2735</li>
           <li>
-            <i class="fas fa-map-marker-alt"></i> Address: 12 Peace Street, Nairobi,
-            Kenya
+            <i class="fas fa-phone"></i>
+            <a href="tel:+19297612735">+1 (929) 761-2735</a>
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i> 12 Peace Street, Nairobi, Kenya
           </li>
         </ul>
       </div>
       <div class="footer-col">
         <h3>Follow Us</h3>
         <ul class="social-links">
-          <li><a href="#"><i class="fas fa-facebook"></i> Facebook</a></li>
-          <li><a href="#"><i class="fas fa-twitter"></i> Twitter</a></li>
-          <li><a href="#"><i class="fas fa-instagram"></i> Instagram</a></li>
-          <li><a href="#"><i class="fas fa-linkedin"></i> LinkedIn</a></li>
+          <li>
+            <a href="https://facebook.com/api" aria-label="Facebook"
+              ><i class="fab fa-facebook"></i> Facebook</a
+            >
+          </li>
+          <li>
+            <a href="https://twitter.com/api" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i> Twitter</a
+            >
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i> Instagram</a
+            >
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i> LinkedIn</a
+            >
+          </li>
         </ul>
       </div>
       <div class="footer-col">
         <h3>Stay Updated</h3>
         <p>Subscribe to our newsletter for the latest news.</p>
-        <form class="newsletter-form">
+        <form class="newsletter-form" action="/subscribe" method="POST">
           <input
             type="email"
             class="newsletter-input"
-            placeholder="Your Email Address"
+            placeholder="Enter your email"
             required
+            aria-label="Newsletter email"
           />
-          <button type="submit" class="cta-button primary-button">Subscribe</button>
+          <button type="submit" class="cta-button primary-button"
+            >Subscribe</button
+          >
         </form>
       </div>
     </div>
     <div class="footer-bottom container">
-      <p style="color: white;">
+      <p>
         © {new Date().getFullYear()} Africa Peace Initiative. All rights reserved.
         |
-        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Service</a>
       </p>
     </div>
   </footer>
 </Layout>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (!hamburger || !navLinks) {
+      console.error("Error: Hamburger or navLinks element not found!");
+      return;
+    }
+
+    hamburger.addEventListener("click", () => {
+      const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", String(!isExpanded));
+      navLinks.classList.toggle("active");
+    });
+  });
+</script>
+
 <style lang="scss">
+  @use "sass:color";
+
+  /* Variables */
+  :root {
+    --primary-color: #2e8b57;
+    --primary-darker: #226441;
+    --secondary-color: #ffffff;
+    --off-white: #f0fff0;
+    --dark-green: #006400;
+    --accent-color: #38761d;
+    --blue-accent: #4682b4;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --spacing-unit: 24px;
+    --border-radius: 8px;
+    --neutral-light: #f2f2f2;
+    --neutral-dark: #333333;
+    --headline-font: "Montserrat", sans-serif;
+    --subheadline-font: "Roboto", sans-serif;
+  }
+  /* Footer */
+  footer {
+    background: var(--neutral-dark);
+    padding: 40px 0 20px;
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding-bottom: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-col {
+      h3 {
+        color: var(--secondary-color);
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      ul {
+        list-style: none;
+        li {
+          margin-bottom: 12px;
+          a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+            &:hover,
+            &:focus {
+              color: var(--primary-color);
+              outline: none;
+            }
+          }
+          i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .newsletter-form {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        .newsletter-input {
+          padding: 10px;
+          flex: 1;
+          border: none;
+          border-radius: 5px;
+          font-size: 1rem;
+          &:focus {
+            outline: 2px solid var(--primary-color);
+          }
+        }
+        .cta-button {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          background: var(--primary-color);
+          color: white;
+          cursor: pointer;
+          font-size: 1rem;
+          transition: background 0.3s ease;
+          &:hover {
+            background: var(--primary-darker);
+          }
+          &:focus {
+            outline: 2px solid var(--primary-color);
+          }
+        }
+      }
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--neutral-light);
+      padding-top: 20px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      p {
+        color: var(--off-white);
+        font-size: 0.9rem;
+        margin: 0;
+        line-height: 1.5;
+      }
+      a {
+        color: var(--off-white);
+        margin: 0 8px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        &:hover,
+        &:focus {
+          color: var(--primary-color);
+          outline: none;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      .footer-content {
+        gap: 1.5rem;
+        padding-bottom: 20px;
+      }
+      .footer-col {
+        h3 {
+          font-size: 1.3rem;
+        }
+        ul li a {
+          font-size: 0.9rem;
+        }
+        .newsletter-form {
+          flex-direction: column;
+          .newsletter-input {
+            width: 100%;
+          }
+          .cta-button {
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+      .footer-bottom p {
+        font-size: 0.85rem;
+      }
+    }
+  }
   .hero-banner {
     position: relative;
     height: 400px;
@@ -178,6 +400,175 @@ import Layout from "../layouts/Layout.astro";
       margin-bottom: 2.5rem;
       color: var(--off-white);
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .container.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo img {
+    height: 60px;
+    transition: filter 0.3s ease;
+  }
+
+  .logo img:hover {
+    filter: drop-shadow(0 0 8px rgba(39, 174, 96, 0.5)); /* Subtle green glow */
+  }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+
+  .hamburger .bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #1a3c5e; /* Darker blue for contrast */
+    margin: 6px 0;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger[aria-expanded="true"] .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .hamburger[aria-expanded="true"] .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger[aria-expanded="true"] .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    margin: 0 1.5rem;
+  }
+
+  .nav-links a {
+    color: #1a3c5e; /* Darker blue for better contrast */
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: "Arial", sans-serif; /* Replace with NGO’s font */
+    padding: 0.5rem 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    letter-spacing: 0.02em;
+    border-radius: 25px; /* Capsule shape */
+  }
+
+  .nav-links a:hover {
+    color: #27ae60;
+    background: rgba(39, 174, 96, 0.1); /* Light green bg on hover */
+    transform: translateY(-2px);
+  }
+
+  .accent-line {
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      #0057b7,
+      #27ae60
+    ); /* Blue-to-green gradient */
+    width: 100%;
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #fff;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 0;
+      z-index: 999;
+      transition: transform 0.3s ease;
+      transform: translateX(100%);
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+      display: flex;
+      transform: translateX(0);
+    }
+
+    .nav-links li {
+      margin: 2.5rem 0;
+    }
+
+    .nav-links a {
+      font-size: 1.8rem;
+      color: #1a3c5e;
+      padding: 1rem 2rem;
+      background: none; /* No hover bg on mobile */
+    }
+
+    .accent-line {
+      display: none; /* Hide accent line on mobile */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo img {
+      height: 50px;
+    }
+
+    .hamburger {
+      width: 35px;
+      height: 35px;
+    }
+
+    .hamburger .bar {
+      width: 25px;
+      height: 2px;
+      margin: 5px 0;
+    }
+
+    .nav-links a {
+      font-size: 1.6rem;
+    }
+
+    .container.navbar {
+      padding: 1rem 1.5rem;
     }
   }
 
@@ -302,7 +693,9 @@ import Layout from "../layouts/Layout.astro";
           padding: 14px 28px;
           font-size: 1.1rem;
           border-radius: 8px;
-          transition: background-color 0.3s ease, transform 0.3s ease;
+          transition:
+            background-color 0.3s ease,
+            transform 0.3s ease;
 
           &:hover {
             background-color: var(--primary-darker);
