@@ -32,18 +32,21 @@ import Layout from "../layouts/Layout.astro";
   </header>
   <section
     class="hero-banner"
-    style="background: url('https://source.unsplash.com/1600x900/?africa,peace') center/cover no-repeat; height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background-blend-mode: multiply; background-color: rgba(0, 51, 0, 0.7);"
+    style="background: url('https://source.unsplash.com/1600x900/?africa,peace') center/cover no-repeat; height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background-blend-mode: overlay; background-color: rgba(19, 61, 25, 0.8); animation: fadeIn 1.5s ease-in-out;"
   >
-    <div class="hero-content container">
+    <div
+      class="hero-content container"
+      style="animation: slideUp 1.2s ease-in-out;"
+    >
       <h1
         class="hero-headline"
-        style="font-size: 3.5rem; font-weight: bold; text-shadow: 3px 3px 6px rgba(0,0,0,0.5); color: #133d19;"
+        style="font-size: 3.5rem; font-weight: bold; text-shadow: 3px 3px 6px rgba(0,0,0,0.5); color: #e69a28;"
       >
         Regional Dialogue: The Conflict in Eastern Congo
       </h1>
       <p
         class="hero-subheadline"
-        style="font-size: 1.8rem; max-width: 800px; margin: auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); color: #5a7d5a;"
+        style="font-size: 1.8rem; max-width: 800px; margin: auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); color: #eef5e9;"
       >
         A critical discussion on conflict resolution and peace pathways in the
         Great Lakes Region.
@@ -79,7 +82,7 @@ import Layout from "../layouts/Layout.astro";
     <a
       href="#"
       class="cta-button"
-      style="display: inline-block; background: #e69a28; color: white; padding: 15px 30px; font-size: 1.4rem; text-decoration: none; border-radius: 5px; margin-top: 20px;"
+      style="display: inline-block; background: #e69a28; color: white; padding: 15px 30px; font-size: 1.4rem; text-decoration: none; border-radius: 5px; margin-top: 20px; transition: background 0.3s ease;"
       >Register Now</a
     >
   </section>
@@ -120,3 +123,27 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </footer>
 </Layout>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .cta-button:hover {
+    background: #c48222;
+  }
+</style>
